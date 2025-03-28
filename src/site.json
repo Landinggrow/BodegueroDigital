@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "menu": [
+      {
+        "name": "Inicio",
+        "link": "/"
+      },
+      {
+        "name": "Funcionalidades",
+        "link": "/funcionalidades"
+      },
+      {
+        "name": "Precio",
+        "link": "/precio"
+      },
+      {
+        "name": "Blog",
+        "link": "/blog"
+      }
+    ],
+    "button1": {
+      "text": "Comenzar",
+      "link": "https://comercios.andape.pe/factura-facil-rapido"
+    },
+    "button2": {
+      "text": "Contactar Ventas",
+      "link": "https://wa.link/dhmgdy"
+    }
+  },
+  "footer": {
+    "content": {
+      "description": "Somos NubeRest, una solución integral para restaurantes y negocios gastronómicos. Ofrecemos diversas herramientas para optimizar la operación de tu negocio.",
+      "email": "soporte@nuberest.org.pe",
+      "phone": "(+51) 956821285"
+    }
+  }
+}
