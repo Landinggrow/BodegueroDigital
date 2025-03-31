@@ -4,54 +4,69 @@ import IconFacebook from "../icons/IconFacebook.astro"
 import IconYouTube from  "../icons/IconYouTube.astro"
 import IconLinkedin from  "../icons/IconLinkedin.astro"
 import IconInstagram from  "../icons/IconInstagram.astro"
+import Container from './Container.astro';
 ---
 
 <footer class="bg-[#FDFCF7] text-gray-800 py-8">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Sección de Nosotros -->
-        <div>
+    <Container >
+        <div class="flex justify-between items-center">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="/public/images/LogoNubeRest.png" class="md:h-6 h-4" alt="Logo de NubeRest">
-              </a>
-            <p class="mt-4 text-sm text-[#545454]">{siteData.footer.content.description}</p>
-            <p class="mt-4 text-sm text-[#545454]">{siteData.footer.content.email}</p>
-            <p class="mt-4 text-sm text-[#545454]">{siteData.footer.content.phone}</p>
-            <div class="mt-4 flex space-x-3">
-                <IconFacebook /> 
-                <IconYouTube />
-                <IconLinkedin /></a>
-                <IconInstagram /></a>
-              </div>
+                <img src="/public/images/LogoNubeRest.png" class="md:h-6 h-5" alt="Logo de NubeRest">
+            </a>
+            <div>
+                <a href={siteData.nav.button1.link} 
+                   class="text-white bg-[#E49542] hover:bg-[#854937] focus:ring-4 focus:outline-none 
+                          focus:ring-[#854937] font-medium rounded-full text-[20px] px-10 sm:px-16 py-2 text-center transition-all">
+                    {siteData.nav.button1.text}
+                </a>
+            </div>
         </div>
 
-        <!-- Sección de Menú -->
-        <div>
-            <h3 class="text-lg font-semibold text-gray-700">Menú:</h3>
-            <ul class="mt-2 space-y-2">
-                {siteData.nav.menu.map((item)=>(
-                    <li>
-                        <a href={item.link} class=" py-2 px-3 text-[#545454] text-[17px] font-normal rounded-sm hover:bg-[#E49542] lg:hover:bg-transparent lg:hover:text-[#E49542] lg:p-0 transition-all">
-                            {item.name}
-                        </a>
-                    </li>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Sección de Nosotros -->
+            <div>
+                <h3 class="text-[24px] font-bold text-[#854937]">Nosotros:</h3>
+                <p class="mt-2 text-sm text-[#545454]">{siteData.footer.content.description}</p>
+                <p class="mt-4 text-sm text-[#545454]">{siteData.footer.content.email}</p>
+                <p class="mt-4 text-sm text-[#545454]">{siteData.footer.content.phone}</p>
+                <div class="mt-4 flex space-x-3">
+                    <IconFacebook class="text-[#E49542]" /> 
+                    <IconYouTube class="text-[#E49542]" />
+                    <IconLinkedin class="text-[#E49542]" />
+                    <IconInstagram class="text-[#E49542]" />
+                </div>
+            </div>
+
+            <!-- Sección de Menú -->
+            <div>
+                <h3 class="text-[24px] font-bold text-[#854937]">Menú:</h3>
+                <ul class="mt-2 space-y-2">
+                    {siteData.nav.menu.map((item) => (
+                        <li>
+                            <a href={item.link} 
+                               class="py-2 px-3 text-[#545454] text-[17px] font-normal rounded-sm 
+                                      hover:bg-[#E49542] lg:hover:bg-transparent lg:hover:text-[#E49542] 
+                                      lg:p-0 transition-all">
+                                {item.name}
+                            </a>
+                        </li>
                     ))}
-                
-            </ul>
+                </ul>
+            </div>
+
+            <!-- Sección de Soporte -->
+            <div>
+                <h3 class="text-[24px] font-bold text-[#854937]">Soporte:</h3>
+                <div class="mt-2 flex space-x-3">
+                    <div class="w-36 h-20 bg-white rounded-md shadow"></div>
+                    <div class="w-36 h-20 bg-white rounded-md shadow"></div>
+                </div>
+            </div>
         </div>
 
-        <!-- Sección de Soporte y Botón -->
-        <div>
-            <h3 class="text-lg font-semibold text-gray-700">Soporte:</h3>
-            <div class="mt-2 flex space-x-3">
-                <div class="w-16 h-10 bg-white rounded-md shadow"></div>
-                <div class="w-16 h-10 bg-white rounded-md shadow"></div>
-            </div>
-            <div class="mt-6">
-                <a  href={ siteData.nav.button1.link} class="text-white bg-[#E49542] hover:bg-[#854937] focus:ring-4 focus:outline-none focus:ring-[#854937] font-medium rounded-full text-[20px] px-5 py-2 text-center transition-all">{siteData.nav.button1.text}</a>
-            </div>
+        <div class="text-center text-sm text-gray-500 mt-8">
+            Copyright © 2025. NubeRest
         </div>
-    </div>
-    <div class="text-center text-sm text-gray-500 mt-8">
-        Copyright © 2025. NubeRest
-    </div>
+    </Container>
 </footer>
+
