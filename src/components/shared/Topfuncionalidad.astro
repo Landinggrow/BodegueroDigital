@@ -1,0 +1,12 @@
+---
+import Container from './Container.astro';
+import siteData from '../../site.json';
+
+const { topinfo, topdescripcion } = siteData.functionalities;
+---
+<Container>
+  <div class="text-center py-8 mt-20">
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">{topinfo}</h1>
+    <p class="text-lg text-gray-600">{topdescripcion}</p>
+  </div>
+</Container>
