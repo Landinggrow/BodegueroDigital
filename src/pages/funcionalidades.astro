@@ -2,91 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 import Topfuncionalidad from '../components/shared/Topfuncionalidad.astro';
-import siteData from '../site.json';
+import Bodyfuncionalidad from '../components/shared/Bodyfuncionalidad.astro';
 
-const functionalities: { name: string; children: { funcion: string; description: string; imagen: string }[] }[] = siteData.functionalities.items;
 ---
+
 <Layout>
   <Topfuncionalidad />
-
-  <div class="container mx-auto mt-10">
-    <!-- Selector de pestañas -->
-    <div class="flex justify-center space-x-4 mb-8">
-      {functionalities.map((item) => (
-        <button
-          class="px-4 py-2 rounded-lg text-sm font-medium bg-gray-200 text-gray-800 transition-colors duration-200 hover:bg-gray-300 aria-selected:bg-gray-800 aria-selected:text-white"
-          data-tab-target
-          data-tab-id={item.name}
-        >
-          {item.name}
-        </button>
-      ))}
-    </div>
-
-    <!-- Contenido dinámico -->
-    <div data-tab-content>
-      {functionalities.map((item) => (
-        <div 
-          class="grid grid-cols-1 md:grid-cols-2 gap-8" 
-          data-tab-pane 
-          data-tab-id={item.name}
-          hidden
-        >
-          {item.children.map((child) => (
-            <div class="flex flex-col items-center text-center">
-              <img src={child.imagen} alt={child.funcion} class="w-full max-w-sm rounded-lg shadow-md mb-4" />
-              <h2 class="text-xl font-bold text-gray-800 mb-2">{child.funcion}</h2>
-              <p class="text-gray-600">{child.description}</p>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  </div>
+  <Bodyfuncionalidad />
 </Layout>
-
-<script is:inline>
-document.addEventListener('DOMContentLoaded', () => {
-  const tabsContainer = document.querySelector('[data-tab-content]');
-  const tabButtons = document.querySelectorAll('[data-tab-target]');
-  const tabPanes = document.querySelectorAll('[data-tab-pane]');
-  
-  // Activar primera pestaña por defecto
-  const activateFirstTab = () => {
-    const firstTab = tabButtons[0];
-    const firstPane = tabPanes[0];
-    if (firstTab && firstPane) {
-      firstTab.setAttribute('aria-selected', 'true');
-      firstPane.hidden = false;
-    }
-  };
-
-  // Manejar clic en las pestañas
-  const handleTabClick = (clickedTab) => {
-    const tabId = clickedTab.dataset.tabId;
-    
-    // Resetear todas las pestañas
-    tabButtons.forEach(tab => {
-      tab.setAttribute('aria-selected', 'false');
-    });
-    tabPanes.forEach(pane => {
-      pane.hidden = true;
-    });
-    
-    // Activar pestaña seleccionada
-    clickedTab.setAttribute('aria-selected', 'true');
-    const activePane = tabsContainer.querySelector(`[data-tab-pane][data-tab-id="${tabId}"]`);
-    if (activePane) {
-      activePane.hidden = false;
-    }
-  };
-
-  // Agregar event listeners
-  tabButtons.forEach(tab => {
-    tab.addEventListener('click', () => handleTabClick(tab));
-  });
-
-  // Inicializar
-  activateFirstTab();
-});
-</script>

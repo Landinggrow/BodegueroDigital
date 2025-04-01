@@ -1,0 +1,75 @@
+---
+import Container from './Container.astro';
+import siteData from '../../site.json';
+
+const functionalities: { name: string; children: { funcion: string; description: string; imagen: string }[] }[] = siteData.functionalities.items;
+---
+<Container>
+    <div class="container mx-auto mt-10">
+        <!-- Selector de pestañas con nuevo diseño -->
+        <div class="flex justify-center space-x-2 bg-[#F3F0ED] p-2 rounded-full shadow-md border border-[#2B2B2B]">
+          {functionalities.map((item, index) => (
+            <button
+              class={`px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${index === 0 ? 'bg-[#854937] text-[#FDFCF7]' : 'bg-[#FDFCF7] text-[#2B2B2B] hover:bg-[#F3F0ED]'}`}
+              data-tab-target
+              data-tab-id={item.name}
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
+    
+        <!-- Contenido dinámico -->
+        <div data-tab-content class="mt-6">
+          {functionalities.map((item, index) => (
+            <div 
+              class="grid grid-cols-1 md:grid-cols-2 gap-8"
+              data-tab-pane 
+              data-tab-id={item.name}
+              hidden={index !== 0}
+            >
+              {item.children.map((child) => (
+                <div class="flex flex-col items-center text-center">
+                  <img src={child.imagen} alt={child.funcion} class="w-full max-w-sm rounded-lg shadow-md mb-4" />
+                  <h2 class="text-xl font-bold text-[#2B2B2B] mb-2">{child.funcion}</h2>
+                  <p class="text-[#2B2B2B]">{child.description}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+</Container>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabsContainer = document.querySelector('[data-tab-content]');
+      const tabButtons = document.querySelectorAll('[data-tab-target]');
+      const tabPanes = document.querySelectorAll('[data-tab-pane]');
+      
+      const activateTab = (selectedTab) => {
+        const tabId = selectedTab.dataset.tabId;
+        
+        tabButtons.forEach(tab => {
+          tab.classList.remove('bg-[#854937]', 'text-[#FDFCF7]');
+          tab.classList.add('bg-[#FDFCF7]', 'text-[#2B2B2B]');
+        });
+        tabPanes.forEach(pane => {
+          pane.hidden = true;
+        });
+        
+        selectedTab.classList.add('bg-[#854937]', 'text-[#FDFCF7]');
+        selectedTab.classList.remove('bg-[#FDFCF7]', 'text-[#2B2B2B]');
+        
+        const activePane = tabsContainer.querySelector(`[data-tab-pane][data-tab-id="${tabId}"]`);
+        if (activePane) {
+          activePane.hidden = false;
+        }
+      };
+    
+      tabButtons.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateTab(tab));
+        if (index === 0) activateTab(tab); // Activar primera pestaña por defecto
+      });
+    });
+    </script>

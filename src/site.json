@@ -38,17 +38,17 @@
           {
             "funcion": "POS",
             "description": "Realiza ventas de forma ágil y sin complicaciones, con impresión automática de comandas que acelera el servicio.",
-            "imagen": "/images/functionality/pos.png"
+            "imagen": "/images/functionality/pos.svg"
           },
           {
             "funcion": "Pedidos Mesa",
             "description": "Conecta en tiempo real con meseros y cajeros, permitiendo cobros parciales (división de cuentas), traspasos de pedidos entre mesas y opciones de pago flexibles, para un servicio impecable.",
-            "imagen": "/images/functionality/pedidosmesa.png"
+            "imagen": "/images/functionality/pedidosmesa.svg"
           },
           {
             "funcion": "Clientes",
             "description": "Administra y fideliza a tus clientes con un intuitivo sistema CRUD, facilitando el seguimiento y la personalización de la experiencia.",
-            "imagen": "/images/functionality/clientes.png"
+            "imagen": "/images/functionality/clientes.svg"
           }
         ]
       },
@@ -58,17 +58,17 @@
           {
             "funcion": "Gestión Integral",
             "description": "Controla platos, productos y packs con herramientas fáciles de usar. Añade sabores a tus platos, gestiona el stock de productos y crea atractivos packs que se adaptan a cualquier ocasión.",
-            "imagen": "/images/functionality/platos.png"
+            "imagen": "/images/functionality/platos.svg"
           },
           {
             "funcion": "Insumos, Sabores e Ingredientes",
             "description": "Organiza y actualiza de forma sencilla cada insumo, sabor e ingrediente, garantizando una oferta culinaria siempre fresca e innovadora.",
-            "imagen": "/images/functionality/insumos.png"
+            "imagen": "/images/functionality/insumos.svg"
           },
           {
             "funcion": "Categorias",
             "description": "Clasifica y optimiza tu menú para que tus clientes encuentren siempre lo que buscan.",
-            "imagen": "/images/functionality/categorias.png"
+            "imagen": "/images/functionality/categorias.svg"
           }
         ]
       },
@@ -78,7 +78,7 @@
           {
             "funcion": "Recetas",
             "description": "Optimiza el control del stock de insumos en cada plato, asegurando precisión en las preparaciones y minimizando el desperdicio.",
-            "imagen": "/images/functionality/recetas.png"
+            "imagen": "/images/functionality/recetas.svg"
           }
         ]
       },
@@ -88,12 +88,12 @@
           {
             "funcion": "Registro de Compras",
             "description": "Lleva un control detallado de cada adquisición, facilitando la gestión y la toma de decisiones.",
-            "imagen": "/images/functionality/compras.png"
+            "imagen": "/images/functionality/compras.svg"
           },
           {
             "funcion": "Proveedores",
             "description": "Administra tus relaciones con proveedores a través de un sistema CRUD que mantiene toda la información al día y accesible.",
-            "imagen": "/images/functionality/proveedores.png"
+            "imagen": "/images/functionality/proveedores.svg"
           }
         ]
       },
@@ -103,12 +103,12 @@
           {
             "funcion": "Reportes de Ventas",
             "description": "Accede a informes detallados, con estado SUNAT, anulación de comprobantes y descargo en Excel, para un análisis financiero preciso.",
-            "imagen": "/images/functionality/reporte_ventas.png"
+            "imagen": "/images/functionality/reporte_ventas.svg"
           },
           {
             "funcion": "Reportes de Compras",
             "description": "Accede a informes detallados, anulación de comprobantes y descargo en Excel, para un análisis financiero preciso.",
-            "imagen": "/images/functionality/reporte_compras.png"
+            "imagen": "/images/functionality/reporte_compras.svg"
           }
         ]
       },
@@ -118,7 +118,7 @@
           {
             "funcion": "Caja",
             "description": "Gestiona ingresos y egresos con reportes detallados de cada cierre, además de resúmenes de productos vendidos y ventas totales, asegurando una administración transparente y eficiente.",
-            "imagen": "/images/functionality/caja.png"
+            "imagen": "/images/functionality/caja.svg"
           }
         ]
       },
@@ -128,7 +128,7 @@
           {
             "funcion": "Chatbot WhatsApp",
             "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
-            "imagen": "/images/functionality/chatbot.png"
+            "imagen": "/images/functionality/chat_bot.svg"
           }
         ]
       }
