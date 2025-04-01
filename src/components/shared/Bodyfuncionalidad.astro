@@ -23,16 +23,18 @@ const functionalities: { name: string; children: { funcion: string; description:
         <div data-tab-content class="mt-6">
           {functionalities.map((item, index) => (
             <div 
-              class="grid grid-cols-1 md:grid-cols-2 gap-8"
+              class="grid grid-cols-1 gap-8"
               data-tab-pane 
               data-tab-id={item.name}
               hidden={index !== 0}
             >
-              {item.children.map((child) => (
-                <div class="flex flex-col items-center text-center">
-                  <img src={child.imagen} alt={child.funcion} class="w-full max-w-sm rounded-lg shadow-md mb-4" />
-                  <h2 class="text-xl font-bold text-[#2B2B2B] mb-2">{child.funcion}</h2>
-                  <p class="text-[#2B2B2B]">{child.description}</p>
+              {item.children.map((child, childIndex) => (
+                <div class={`flex flex-col md:flex-row items-center ${childIndex % 2 === 0 ? 'md:flex-row-reverse' : ''} text-center md:text-left`}>
+                  <img src={child.imagen} alt={child.funcion} class="w-full md:w-1/2 max-w-sm rounded-lg shadow-md mb-4 md:mb-0" />
+                  <div class="md:w-1/2 px-4">
+                    <h2 class="text-xl font-bold text-[#2B2B2B] mb-2">{child.funcion}</h2>
+                    <p class="text-[#2B2B2B]">{child.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -72,4 +74,4 @@ const functionalities: { name: string; children: { funcion: string; description:
         if (index === 0) activateTab(tab); // Activar primera pestaña por defecto
       });
     });
-    </script>
+</script>
