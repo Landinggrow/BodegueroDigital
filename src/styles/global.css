@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .scrollable-tabs {
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}

@@ -6,11 +6,11 @@ const functionalities: { name: string; children: { funcion: string; description:
 ---
 <Container>
   <div class="container mx-auto mt-10 px-4 md:px-8">
-    <!-- Selector de pestañas con nuevo diseño -->
-    <div class="flex flex-wrap justify-center space-x-2 bg-[#F3F0ED] p-2 rounded-full shadow-md border border-[#2B2B2B]">
+    <!-- Selector de pestañas con diseño responsive -->
+    <div class="flex flex-nowrap lg:flex-wrap justify-start lg:justify-center gap-2 bg-[#F3F0ED] p-2 rounded-full shadow-md border border-[#2B2B2B] overflow-x-auto lg:overflow-visible scrollbar-hide">
       {functionalities.map((item, index) => (
         <button
-          class={`px-4 py-2 text-sm md:text-base font-medium rounded-full transition-colors duration-200 ${index === 0 ? 'bg-[#854937] text-[#FDFCF7]' : 'bg-[#FDFCF7] text-[#2B2B2B] hover:bg-[#F3F0ED]'}`}
+          class={`px-4 py-2 text-sm md:text-base lg:text-lg font-medium rounded-full transition-colors duration-200 flex-shrink-0 lg:flex-1 whitespace-nowrap text-center ${index === 0 ? 'bg-[#854937] text-[#FDFCF7] shadow-lg' : 'bg-[#FDFCF7] text-[#2B2B2B] hover:bg-[#E49542]/20'}`}
           data-tab-target
           data-tab-id={item.name}
         >
@@ -32,8 +32,8 @@ const functionalities: { name: string; children: { funcion: string; description:
             <div class={`flex flex-col md:flex-row items-center ${childIndex % 2 === 0 ? 'md:flex-row-reverse' : ''} text-center md:text-left`}>
               <img src={child.imagen} alt={child.funcion} class="w-full md:w-1/2 max-w-sm rounded-lg shadow-md mb-4 md:mb-0" />
               <div class="md:w-1/2 px-4 flex flex-col justify-center">
-                <h2 class="text-2xl md:text-3xl font-bold text-[#2B2B2B] mb-4 text-center md:text-left">{child.funcion}</h2>
-                <p class="text-lg md:text-xl text-[#2B2B2B] text-justify leading-relaxed">{child.description}</p>
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#2B2B2B] mb-4 text-center md:text-left">{child.funcion}</h2>
+                <p class="text-base md:text-lg lg:text-xl text-[#2B2B2B] text-justify leading-relaxed">{child.description}</p>
               </div>
             </div>
           ))}
