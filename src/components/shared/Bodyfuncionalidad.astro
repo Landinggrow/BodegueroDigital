@@ -5,42 +5,42 @@ import siteData from '../../site.json';
 const functionalities: { name: string; children: { funcion: string; description: string; imagen: string }[] }[] = siteData.functionalities.items;
 ---
 <Container>
-    <div class="container mx-auto mt-10">
-        <!-- Selector de pestañas con nuevo diseño -->
-        <div class="flex justify-center space-x-2 bg-[#F3F0ED] p-2 rounded-full shadow-md border border-[#2B2B2B]">
-          {functionalities.map((item, index) => (
-            <button
-              class={`px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${index === 0 ? 'bg-[#854937] text-[#FDFCF7]' : 'bg-[#FDFCF7] text-[#2B2B2B] hover:bg-[#F3F0ED]'}`}
-              data-tab-target
-              data-tab-id={item.name}
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
-    
-        <!-- Contenido dinámico -->
-        <div data-tab-content class="mt-6">
-          {functionalities.map((item, index) => (
-            <div 
-              class="grid grid-cols-1 gap-8"
-              data-tab-pane 
-              data-tab-id={item.name}
-              hidden={index !== 0}
-            >
-              {item.children.map((child, childIndex) => (
-                <div class={`flex flex-col md:flex-row items-center ${childIndex % 2 === 0 ? 'md:flex-row-reverse' : ''} text-center md:text-left`}>
-                  <img src={child.imagen} alt={child.funcion} class="w-full md:w-1/2 max-w-sm rounded-lg shadow-md mb-4 md:mb-0" />
-                  <div class="md:w-1/2 px-4">
-                    <h2 class="text-xl font-bold text-[#2B2B2B] mb-2">{child.funcion}</h2>
-                    <p class="text-[#2B2B2B]">{child.description}</p>
-                  </div>
-                </div>
-              ))}
+  <div class="container mx-auto mt-10 px-4 md:px-8">
+    <!-- Selector de pestañas con nuevo diseño -->
+    <div class="flex flex-wrap justify-center space-x-2 bg-[#F3F0ED] p-2 rounded-full shadow-md border border-[#2B2B2B]">
+      {functionalities.map((item, index) => (
+        <button
+          class={`px-4 py-2 text-sm md:text-base font-medium rounded-full transition-colors duration-200 ${index === 0 ? 'bg-[#854937] text-[#FDFCF7]' : 'bg-[#FDFCF7] text-[#2B2B2B] hover:bg-[#F3F0ED]'}`}
+          data-tab-target
+          data-tab-id={item.name}
+        >
+          {item.name}
+        </button>
+      ))}
+    </div>
+
+    <!-- Contenido dinámico -->
+    <div data-tab-content class="mt-6">
+      {functionalities.map((item, index) => (
+        <div 
+          class="grid grid-cols-1 gap-8"
+          data-tab-pane 
+          data-tab-id={item.name}
+          hidden={index !== 0}
+        >
+          {item.children.map((child, childIndex) => (
+            <div class={`flex flex-col md:flex-row items-center ${childIndex % 2 === 0 ? 'md:flex-row-reverse' : ''} text-center md:text-left`}>
+              <img src={child.imagen} alt={child.funcion} class="w-full md:w-1/2 max-w-sm rounded-lg shadow-md mb-4 md:mb-0" />
+              <div class="md:w-1/2 px-4 flex flex-col justify-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#2B2B2B] mb-4 text-center md:text-left">{child.funcion}</h2>
+                <p class="text-lg md:text-xl text-[#2B2B2B] text-justify leading-relaxed">{child.description}</p>
+              </div>
             </div>
           ))}
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
 </Container>
 
 <script is:inline>
