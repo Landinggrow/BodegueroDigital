@@ -1,0 +1,57 @@
+/* Contenedor principal */
+.horizontal-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #f3f0ed;
+  padding: 20px 0;
+}
+
+/* Contenido deslizable */
+.horizontal-scroll-content {
+  display: flex;
+  gap: 25px; /* Eliminamos el espacio entre los elementos */
+  animation: scrollLeft 20s linear infinite; /* Animación de desplazamiento */
+  width: calc(200%); /* Duplicamos el ancho para el efecto infinito */
+}
+
+/* Items individuales */
+.scroll-item {
+  flex: 0 0 auto;
+  width: 180px; /* Asegúrate de que este ancho sea consistente */
+  height: 100px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Animación */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Mueve exactamente la mitad del contenido */
+  }
+}
+
+/* Estilos responsive para pantallas menores a 425px */
+@media (max-width: 425px) {
+  .scroll-item {
+    width: 120px; /* Reducimos el ancho de los elementos */
+    height: 80px; /* Reducimos la altura de los elementos */
+  }
+
+  .horizontal-scroll-content {
+    animation: scrollLeft 15s linear infinite; /* Ajustamos la velocidad de la animación */
+  }
+}

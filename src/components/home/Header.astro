@@ -1,0 +1,44 @@
+---
+import Container from "../shared/Container.astro";
+import Button from "../shared/Button.astro";
+import HorizontalScroll from "../shared/HorizontalScroll";
+import siteData from "../../site.json"
+---
+
+<section class="h-full w-full md:mt-20 bg-[#FDFCF7]">
+    <Container class="flex flex-col md:flex-row items-center gap-8 py-20">
+        <!-- Texto y Botón -->
+        <div class="md:w-1/2 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+                Gestión Gastronómica Inteligente
+            </h1>
+            <p class="mt-4 text-gray-600 text-2xl ">
+                La solución completa para administrar tu restaurante con herramientas modernas y todo desde un solo lugar.
+            </p>
+            <div class="mt-10">
+                <Button />
+            </div>
+            
+        </div>
+
+        <!-- Imagen -->
+        <div class="md:w-1/2">
+            <img src="/images/1.svg" alt="Panel de administración" class="w-full rounded-lg shadow-lg">
+        </div>
+    </Container>
+       
+   
+
+      <Container class="py-12">
+        <h2 class="text-center text-3xl md:text-4xl font-bold text-[#E49542] mb-12">
+          {siteData.support.title}
+        </h2>
+        <HorizontalScroll />
+      </Container>
+      
+</section>
+
+
+      
+      
+  
