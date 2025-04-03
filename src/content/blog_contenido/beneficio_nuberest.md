@@ -1,6 +1,6 @@
 ---
 title: 'Beneficios del Uso de NubeRest en Restaurantes'
-date: '02 Abril 2025'
+date: '2025-04-02'
 resume: 'NubeRest es una solución integral diseñada para optimizar la gestión de restaurantes, mejorando la eficiencia operativa, la experiencia del cliente y la toma de decisiones con reportes detallados.'
 ---
 
