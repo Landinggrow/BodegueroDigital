@@ -1,34 +1,29 @@
 ---
 import { getCollection } from 'astro:content';
-
 import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog_contenido');
-  return posts.map((post: CollectionEntry<'blog_contenido'>) => ({ 
-    params: { slug: post.id }
+  return posts.map((post: CollectionEntry<'blog_contenido'>) => ({
+    params: { slug: post.id },
+    props: { post }
   }));
 }
 
-export async function get({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const posts = await getCollection('blog_contenido');
-  const post = posts.find((p: CollectionEntry<'blog_contenido'>) => p.id === slug);
+type Props = {
+  post: CollectionEntry<'blog_contenido'>
+};
 
-  if (!post) {
-    throw new Error(`Post not found for slug: ${slug}`);
-  }
-
-  const { title, date, resume } = post.data;
-
-  return {
-    body: `
-      <article>
-        <h1>${title}</h1>
-        <p><em>${date.toString()}</em></p>
-        <p>${resume}</p>
-        <div>${post.body}</div>
-      </article>
-    `,
-  };
-}
+const { post } = Astro.props as Props;
+// Renderiza el Markdown y obtiene el componente Content
+const { Content } = await post.render();
+---
+<article class="prose lg:prose-xl mx-auto p-4">
+  <h1 class="text-4xl font-bold mb-2">{post.data.title}</h1>
+  <p class="text-gray-500 mb-4">
+    Publicado el {new Date(post.data.date).toLocaleDateString('es-PE')}
+  </p>
+  <p class="text-xl italic mb-8">{post.data.resume}</p>
+  <!-- Aquí se muestra todo el contenido renderizado del Markdown -->
+  <Content />
+</article>
