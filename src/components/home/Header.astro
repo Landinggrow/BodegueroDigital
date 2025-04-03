@@ -5,40 +5,47 @@ import HorizontalScroll from "../shared/HorizontalScroll";
 import siteData from "../../site.json"
 ---
 
-<section class="h-full w-full md:mt-20 bg-[#FDFCF7]">
-    <Container class="flex flex-col md:flex-row items-center gap-8 py-20">
-        <!-- Texto y Botón -->
-        <div class="md:w-1/2 text-center md:text-left">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
-                Gestión Gastronómica Inteligente
-            </h1>
-            <p class="mt-4 text-gray-600 text-2xl ">
-                La solución completa para administrar tu restaurante con herramientas modernas y todo desde un solo lugar.
-            </p>
-            <div class="mt-10">
-                <Button />
-            </div>
-            
-        </div>
 
-        <!-- Imagen -->
-        <div class="md:w-1/2">
-            <img src="/images/1.svg" alt="Panel de administración" class="w-full rounded-lg shadow-lg">
-        </div>
-    </Container>
-       
-   
+<section class="bg-[#FDFCF7] w-full">
 
-      <Container class="py-12">
-        <h2 class="text-center text-3xl md:text-4xl font-bold text-[#E49542] mb-12">
+    <div class="pt-20 md:pt-40 ">
+      <Container class="flex flex-col items-center gap-8 md:flex-row">
+      
+        <article class="w-full text-center md:w-1/2 md:text-left">
+          <h1 class="text-4xl font-bold text-gray-900 md:text-5xl">
+            Gestión Gastronómica Inteligente
+          </h1>
+          <p class="mt-4 text-2xl text-gray-600">
+            La solución completa para administrar tu restaurante con herramientas modernas y todo desde un solo lugar.
+          </p>
+          <div class="mt-10">
+            <Button aria-label="Descubre más sobre la gestión gastronómica" />
+          </div>
+        </article>
+
+        <figure class="w-full md:w-1/2">
+          <img 
+            src="/images/1.svg" 
+            alt="Panel de administración de restaurante mostrando estadísticas y controles" 
+            class="w-full rounded-lg shadow-lg"
+            loading="lazy"
+            width="600"
+            height="400"
+          >
+        </figure>
+      </Container>
+    </div>
+  
+    <section class="w-full bg-[#FDFCF7] py-10 md:mt-12 md:mb-20">
+      <Container>
+        <h2 class="mb-5 text-center text-3xl font-bold text-[#E49542] md:text-4xl">
           {siteData.support.title}
         </h2>
-        <HorizontalScroll />
+        <HorizontalScroll aria-label="Características de soporte" />
       </Container>
-      
-</section>
+    </section>
+  </section>
 
 
-      
       
   

@@ -1,0 +1,11 @@
+
+---
+import siteData from '../../site.json';
+
+const { href } = Astro.props;
+const { class: customClass=" " }  = Astro.props;
+---
+
+<a href={href} class=` focus:ring-4 focus:outline-none focus:ring-[#854937] rounded-full text-center ${customClass}  bg-[#E49542] `>
+    <slot />
+</a>

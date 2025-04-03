@@ -62,5 +62,67 @@
         "alt": "Koika"
       }
     ]
+  },
+  "pricing": {
+    "button": {
+      "text": "Contactar con Ventas",
+      "link": "#"
+    },
+    "buttons": {
+      "monthly": {
+        "text": "Mensual",
+        "link": "#"
+      },
+      "annual": {
+        "text": "Anual",
+        "link": "#"
+      }
+    },
+    "plans": {
+      "monthly": [
+        {
+          "name": "NRUS",
+          "features": ["Comprobantes ilimitados"],
+          "price": {
+            "amount": 295,
+            "currency": "S/.",
+            "frequency": "mensual"
+          },
+          "description": "Para empresas en el régimen tributario NRUS."
+        },
+        {
+          "name": "Profesional",
+          "features": ["Comprobantes ilimitados"],
+          "price": {
+            "amount": 590,
+            "currency": "S/.",
+            "frequency": "mensual"
+          },
+          "description": "Incluye dos sucursales, por cada sucursal extra + S/. 100 mensual."
+        }
+      ],
+      "annual": [
+        {
+          "name": "Plan NRUS",
+          "features": ["Comprobantes ilimitados"],
+          "price": {
+            "amount": 295,
+            "currency": "S/.",
+            "frequency": "anual"
+          },
+          "description": "Para empresas en el régimen tributario NRUS. Incluye IGV y 1 certificado."
+        },
+        {
+          "name": "Plan Profesional",
+          "features": ["Comprobantes ilimitados"],
+          "price": {
+            "amount": 590,
+            "currency": "S/.",
+            "frequency": "anual"
+          },
+          "description": "Incluye dos sucursales, por cada sucursal extra + S/. 100 anual."
+        }
+      ]
+    }
   }
 }
