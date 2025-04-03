@@ -24,22 +24,24 @@ const { frontmatter, Content } = Astro.props;
 <Layout title={`NubeRest | Blog | ${frontmatter.title}`} keywords={frontmatter.keywords}>
   <Container>
     <div class="article-layout">
-    <Section>
-      <BackgroundPattern slot="bg" />
-      <ArticleHeader 
-        title={frontmatter.title}
-        date={frontmatter.date}
-        resume={frontmatter.resume}
-      />
-      <main class="article-body">
-        <article class="article-content">
-          <ArticleBody>
-            <Content />
-          </ArticleBody>
-        </article>
-      </main>
-    </Section>
-  </div>
+      <Section>
+        <BackgroundPattern slot="bg" />
+        <!-- Header del artículo -->
+        <ArticleHeader 
+          title={frontmatter.title}
+          date={frontmatter.date}
+          resume={frontmatter.resume}
+        />
+        <!-- Cuerpo del artículo -->
+        <main class="article-body">
+          <article class="article-content">
+            <ArticleBody>
+              <Content />
+            </ArticleBody>
+          </article>
+        </main>
+      </Section>
+    </div>
   </Container>
 </Layout>
 
