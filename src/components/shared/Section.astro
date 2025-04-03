@@ -1,0 +1,34 @@
+---
+export interface Props {
+  color?: string;
+}
+
+const { color } = Astro.props;
+---
+
+<section
+  class="section"
+  style={`background-color: ${color || 'white'}`}
+>
+  <slot name="bg" />
+  <div class="wrapper">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: var(--container-padding-y) 0;
+    position: relative;
+    .wrapper {
+      max-width: var(--container-max-width);
+      width: 100%;
+      height: 100%;
+      padding: 0 var(--container-padding);
+      box-sizing: border-box;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+  }
+</style>

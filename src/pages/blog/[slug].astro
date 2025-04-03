@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('blog_contenido');
   return posts.map((post: CollectionEntry<'blog_contenido'>) => ({
@@ -11,19 +11,16 @@ export async function getStaticPaths() {
 }
 
 type Props = {
-  post: CollectionEntry<'blog_contenido'>
+  post: CollectionEntry<'blog_contenido'> & {
+    data: {
+      url?: string;
+      keywords?: string[];
+    };
+  };
 };
 
 const { post } = Astro.props as Props;
 // Renderiza el Markdown y obtiene el componente Content
 const { Content } = await post.render();
 ---
-<article class="prose lg:prose-xl mx-auto p-4">
-  <h1 class="text-4xl font-bold mb-2">{post.data.title}</h1>
-  <p class="text-gray-500 mb-4">
-    Publicado el {new Date(post.data.date).toLocaleDateString('es-PE')}
-  </p>
-  <p class="text-xl italic mb-8">{post.data.resume}</p>
-  <!-- Aquí se muestra todo el contenido renderizado del Markdown -->
-  <Content />
-</article>
+<ArticleLayout frontmatter={{ ...post.data, url: post.data.url || '', keywords: (post.data.keywords || []).join(', ') }} Content={Content} />
