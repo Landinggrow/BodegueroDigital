@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+export async function getStaticPaths() {
+  const posts = await getCollection('blog_contenido');
+  return posts.map((post: CollectionEntry<'blog_contenido'>) => ({
+    params: { slug: post.id },
+    props: { post }
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<'blog_contenido'> & {
+    data: {
+      url?: string;
+      keywords?: string[];
+    };
+  };
+};
+
+const { post } = Astro.props as Props;
+// Renderiza el Markdown y obtiene el componente Content
+const { Content } = await post.render();
+---
+<ArticleLayout frontmatter={{ ...post.data, url: post.data.url || '', keywords: (post.data.keywords || []).join(', ') }} Content={Content} />

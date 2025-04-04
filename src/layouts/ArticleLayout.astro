@@ -1,0 +1,92 @@
+---
+import Layout from './Layout.astro';
+import ArticleHeader from '../components/blog/ArticleHeader.astro';
+import ArticleBody from '../components/blog/ArticleBody.astro';
+import Section from '../components/shared/Section.astro';
+import BackgroundPattern from '../components/shared/BackgroundPattern.astro';
+import Container from '../components/shared/Container.astro';
+import "../styles/global.css";
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    date: string;
+    url: string;
+    resume: string;
+    keywords: string;
+  };
+  Content: any;
+}
+
+const { frontmatter, Content } = Astro.props;
+---
+
+<Layout title={`NubeRest | Blog | ${frontmatter.title}`} keywords={frontmatter.keywords}>
+  <Container>
+    <div class="article-layout">
+      <Section>
+        <BackgroundPattern slot="bg" />
+        <!-- Header del artículo -->
+        <ArticleHeader 
+          title={frontmatter.title}
+          date={frontmatter.date}
+          resume={frontmatter.resume}
+        />
+        <!-- Cuerpo del artículo -->
+        <main class="article-body">
+          <article class="article-content">
+            <ArticleBody>
+              <Content />
+            </ArticleBody>
+          </article>
+        </main>
+      </Section>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .article-layout {
+    background-color: #FFFCFC; /* Fondo principal */
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+
+  .article-body {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #2B2B2B; /* Color para textos principales */
+    padding: 2rem;
+    background-color: #FFFFFF; /* Fondo blanco para el contenido */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .article-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body a {
+    color: #E49542; /* Color para enlaces */
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+
+  .article-body a:hover {
+    color: #5B2C6F; /* Color al pasar el cursor */
+  }
+
+  @media (max-width: 768px) {
+    .article-layout {
+      padding: 1rem;
+    }
+
+    .article-body {
+      padding: 1rem;
+    }
+  }
+</style>

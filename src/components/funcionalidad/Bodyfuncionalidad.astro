@@ -1,0 +1,77 @@
+---
+import Container from '../shared/Container.astro';
+import siteData from '../../site.json';
+
+const functionalities: { name: string; children: { funcion: string; description: string; imagen: string }[] }[] = siteData.functionalities.items;
+---
+<Container>
+  <div class="container mx-auto mt-10 px-4 md:px-8">
+    <!-- Selector de pestañas con diseño responsive -->
+    <div class="flex flex-nowrap lg:flex-wrap justify-start lg:justify-center gap-2 bg-[#F3F0ED] p-2 rounded-full shadow-md border border-[#2B2B2B] overflow-x-auto lg:overflow-visible scrollbar-hide">
+      {functionalities.map((item, index) => (
+        <button
+          class={`px-4 py-2 text-sm md:text-base lg:text-lg font-medium rounded-full transition-colors duration-200 flex-shrink-0 lg:flex-1 whitespace-nowrap text-center ${index === 0 ? 'bg-[#854937] text-[#FDFCF7] shadow-lg' : 'bg-[#FDFCF7] text-[#2B2B2B] hover:bg-[#E49542]/20'}`}
+          data-tab-target
+          data-tab-id={item.name}
+        >
+          {item.name}
+        </button>
+      ))}
+    </div>
+
+    <!-- Contenido dinámico -->
+    <div data-tab-content class="mt-6">
+      {functionalities.map((item, index) => (
+        <div 
+          class="grid grid-cols-1 gap-8"
+          data-tab-pane 
+          data-tab-id={item.name}
+          hidden={index !== 0}
+        >
+          {item.children.map((child, childIndex) => (
+            <div class={`flex flex-col md:flex-row items-center ${childIndex % 2 === 0 ? 'md:flex-row-reverse' : ''} text-center md:text-left`}>
+              <img src={child.imagen} alt={child.funcion} class="w-full md:w-1/2 max-w-sm rounded-lg shadow-md mb-4 md:mb-0" />
+              <div class="md:w-1/2 px-4 flex flex-col justify-center">
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#2B2B2B] mb-4 text-center md:text-left">{child.funcion}</h2>
+                <p class="text-base md:text-lg lg:text-xl text-[#2B2B2B] text-justify leading-relaxed">{child.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</Container>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabsContainer = document.querySelector('[data-tab-content]');
+      const tabButtons = document.querySelectorAll('[data-tab-target]');
+      const tabPanes = document.querySelectorAll('[data-tab-pane]');
+      
+      const activateTab = (selectedTab) => {
+        const tabId = selectedTab.dataset.tabId;
+        
+        tabButtons.forEach(tab => {
+          tab.classList.remove('bg-[#854937]', 'text-[#FDFCF7]');
+          tab.classList.add('bg-[#FDFCF7]', 'text-[#2B2B2B]');
+        });
+        tabPanes.forEach(pane => {
+          pane.hidden = true;
+        });
+        
+        selectedTab.classList.add('bg-[#854937]', 'text-[#FDFCF7]');
+        selectedTab.classList.remove('bg-[#FDFCF7]', 'text-[#2B2B2B]');
+        
+        const activePane = tabsContainer.querySelector(`[data-tab-pane][data-tab-id="${tabId}"]`);
+        if (activePane) {
+          activePane.hidden = false;
+        }
+      };
+    
+      tabButtons.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateTab(tab));
+        if (index === 0) activateTab(tab); // Activar primera pestaña por defecto
+      });
+    });
+</script>

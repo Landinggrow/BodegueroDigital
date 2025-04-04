@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title: string;
+  date: string;
+  resume: string;
+}
+
+const { title, date, resume } = Astro.props;
+---
+
+<div class="article-header">
+  <h1 class="article-title">{title}</h1>
+  <p class="article-date">{new Date(date).toLocaleDateString('es-PE', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+  <p class="article-resume">{resume}</p>
+</div>
+
+<style>
+  .article-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #FDFCF7; /* Fondo secundario */
+    border-bottom: 4px solid #E49542; /* Línea de énfasis */
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .article-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2B2B2B; /* Color para resaltar textos */
+    margin-bottom: 0.5rem;
+  }
+
+  .article-date {
+    font-size: 1rem;
+    color: #545454; /* Color para textos secundarios */
+    margin-bottom: 1rem;
+  }
+
+  .article-resume {
+    font-size: 1.25rem;
+    color: #5B2C6F; /* Color destacado */
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .article-title {
+      font-size: 2rem;
+    }
+
+    .article-resume {
+      font-size: 1rem;
+    }
+  }
+</style>

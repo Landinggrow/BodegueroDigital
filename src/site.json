@@ -31,12 +31,120 @@
       "link": "https://wa.link/dhmgdy"
     }
   },
+  "functionalities": {
+    "topinfo":"Impulsa tu restaurante con una solución integral y a la medida",
+    "topdescripcion":"Descubre cómo nuestro sistema transforma cada proceso en una oportunidad de crecimiento. Diseñado para ofrecer eficiencia y una experiencia de usuario superior, cada módulo está pensado para facilitar la operación diaria y potenciar tus resultados.",
+    "title": "Funcionalidades",
+    "items": [
+      {
+        "name": "Ventas",
+        "children": [
+          {
+            "funcion": "POS",
+            "description": "Realiza ventas de forma ágil y sin complicaciones, con impresión automática de comandas que acelera el servicio.",
+            "imagen": "/images/functionality/pos.svg"
+          },
+          {
+            "funcion": "Pedidos Mesa",
+            "description": "Conecta en tiempo real con meseros y cajeros, permitiendo cobros parciales (división de cuentas), traspasos de pedidos entre mesas y opciones de pago flexibles, para un servicio impecable.",
+            "imagen": "/images/functionality/pedidosmesa.svg"
+          },
+          {
+            "funcion": "Clientes",
+            "description": "Administra y fideliza a tus clientes con un intuitivo sistema CRUD, facilitando el seguimiento y la personalización de la experiencia.",
+            "imagen": "/images/functionality/clientes.svg"
+          }
+        ]
+      },
+      {
+        "name": "Platos y Productos",
+        "children": [
+          {
+            "funcion": "Gestión Integral",
+            "description": "Controla platos, productos y packs con herramientas fáciles de usar. Añade sabores a tus platos, gestiona el stock de productos y crea atractivos packs que se adaptan a cualquier ocasión.",
+            "imagen": "/images/functionality/platos.svg"
+          },
+          {
+            "funcion": "Insumos, Sabores e Ingredientes",
+            "description": "Organiza y actualiza de forma sencilla cada insumo, sabor e ingrediente, garantizando una oferta culinaria siempre fresca e innovadora.",
+            "imagen": "/images/functionality/insumos.svg"
+          },
+          {
+            "funcion": "Categorias",
+            "description": "Clasifica y optimiza tu menú para que tus clientes encuentren siempre lo que buscan.",
+            "imagen": "/images/functionality/categorias.svg"
+          }
+        ]
+      },
+      {
+        "name": "Recetas",
+        "children": [
+          {
+            "funcion": "Recetas",
+            "description": "Optimiza el control del stock de insumos en cada plato, asegurando precisión en las preparaciones y minimizando el desperdicio.",
+            "imagen": "/images/functionality/recetas.svg"
+          }
+        ]
+      },
+      {
+        "name": "Compras",
+        "children": [
+          {
+            "funcion": "Registro de Compras",
+            "description": "Lleva un control detallado de cada adquisición, facilitando la gestión y la toma de decisiones.",
+            "imagen": "/images/functionality/compras.svg"
+          },
+          {
+            "funcion": "Proveedores",
+            "description": "Administra tus relaciones con proveedores a través de un sistema CRUD que mantiene toda la información al día y accesible.",
+            "imagen": "/images/functionality/proveedores.svg"
+          }
+        ]
+      },
+      {
+        "name":"Reportes",
+        "children": [
+          {
+            "funcion": "Reportes de Ventas",
+            "description": "Accede a informes detallados, con estado SUNAT, anulación de comprobantes y descargo en Excel, para un análisis financiero preciso.",
+            "imagen": "/images/functionality/reporte_ventas.svg"
+          },
+          {
+            "funcion": "Reportes de Compras",
+            "description": "Accede a informes detallados, anulación de comprobantes y descargo en Excel, para un análisis financiero preciso.",
+            "imagen": "/images/functionality/reporte_compras.svg"
+          }
+        ]
+      },
+      {
+        "name":"Caja",
+        "children": [
+          {
+            "funcion": "Caja",
+            "description": "Gestiona ingresos y egresos con reportes detallados de cada cierre, además de resúmenes de productos vendidos y ventas totales, asegurando una administración transparente y eficiente.",
+            "imagen": "/images/functionality/caja.svg"
+          }
+        ]
+      },
+      {
+        "name":"Chatbot",
+        "children": [
+          {
+            "funcion": "Chatbot WhatsApp",
+            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
+            "imagen": "/images/functionality/chat_bot.svg"
+          }
+        ]
+      }
+    ]
+  },
   "footer": {
     "content": {
       "description": "Somos NubeRest, una solución integral para restaurantes y negocios gastronómicos. Ofrecemos diversas herramientas para optimizar la operación de tu negocio.",
       "email": "soporte@nuberest.org.pe",
       "phone": "(+51) 956821285"
     }
+<<<<<<< HEAD
   },
   "support": {
     "title": "Ellos ya confían en nosotros",
@@ -160,3 +268,7 @@
     }
   ]
 }
+=======
+  }
+}
+>>>>>>> sebas

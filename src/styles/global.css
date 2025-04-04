@@ -1,1 +1,76 @@
 @import "tailwindcss";
+<<<<<<< HEAD
+=======
+
+.text-center {
+  text-align: center;
+}
+
+.font-style {
+  font-family: 'Arial', sans-serif; /* Cambia esto al estilo de fuente deseado */
+  font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
+  color: #333; /* Cambia el color según sea necesario */
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .scrollable-tabs {
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.transition-shadow {
+  transition: box-shadow 0.2s;
+}
+>>>>>>> sebas
