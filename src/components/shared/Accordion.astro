@@ -1,0 +1,69 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const { items = [] }: { items?: FaqItem[] } = Astro.props;
+---
+
+<ul class="space-y-4">
+    {items.map((item: FaqItem, index: number) => (
+      <li class="bg-[#F3F0ED] rounded-lg">
+        <button 
+          class="w-full flex justify-between items-center p-4 text-left font-semibold focus:outline-none toggle-btn text-[#2B2B2B]"
+          data-index={index}
+        >
+          {item.question}
+          <span class="icon transition-transform duration-300">➕</span>
+        </button>
+        <div 
+          class="toggle-content overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out px-4"
+          style="max-height: 0;"
+        >
+          <div class="py-4 break-words text-[#2B2B2B]">
+            {item.answer}
+          </div>
+        </div>
+      </li>
+    ))}
+  </ul>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".toggle-btn");
+  
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling as HTMLElement;
+          const icon = button.querySelector(".icon");
+  
+          if (!content || !icon) return;
+  
+          const isOpen = content.classList.contains("open");
+  
+          // Cerrar todos
+          document.querySelectorAll(".toggle-content").forEach(el => {
+            el.classList.remove("open");
+            (el as HTMLElement).style.maxHeight = "0px";
+          });
+  
+          document.querySelectorAll(".icon").forEach(i => {
+            (i as HTMLElement).textContent = "➕";
+          });
+  
+          if (!isOpen) {
+            content.classList.add("open");
+  
+            // Forzar reflujo para animar correctamente
+            void (content as HTMLElement).offsetWidth;
+  
+            // Calcular scrollHeight real y aplicarlo como max-height
+            (content as HTMLElement).style.maxHeight = content.scrollHeight + "px";
+  
+            icon.textContent = "✖";
+          }
+        });
+      });
+    });
+  </script>

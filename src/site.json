@@ -11,11 +11,15 @@
       },
       {
         "name": "Precio",
-        "link": "/precio"
+        "link": "#precio"
       },
       {
         "name": "Blog",
         "link": "/blog"
+      },
+      {
+        "name": "Preguntas Frecuentes",
+        "link": "#FaQ"
       }
     ],
     "button1": {
@@ -124,5 +128,35 @@
         }
       ]
     }
-  }
+  },
+  "faq": [
+    {
+      "question": "¿NubeRest está aprobada por SUNAT?",
+      "answer": "Por definir"
+    },
+    {
+      "question": "¿Puedo emitir otros comprobantes?",
+      "answer": "Por definir"
+    },
+    {
+      "question": "¿Qué necesito para empezar a emitir facturación electrónica?",
+      "answer": "Por definir"
+    },
+    {
+      "question": "¿Puedo enviar mis comprobantes vía WhatsApp?",
+      "answer": "Por definir"
+    },
+    {
+      "question": "¿Hay rapidez y automatización para la impresión?",
+      "answer": "Por definir"
+    },
+    {
+      "question": "¿Puedo acceder a una prueba demo?",
+      "answer": "Por definir"
+    },
+    {
+      "question": "¿Está segura mi información?",
+      "answer": "Aquí tienes algunos ejemplos de oraciones para diferentes propósitos: \"¿Dónde está el libro?\", \"¡Qué bonito día!\", \"No puedo ir a la fiesta\", \"Los niños jugaban en el parque\""
+    }
+  ]
 }

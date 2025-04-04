@@ -6,11 +6,12 @@ import ButtonPrice from './ButtonPrice.astro';
 const plans: { [key: string]: { name: string; features: string[]; price: { amount: number; currency: string; frequency: string }; description: string }[] } = siteData.pricing.plans;
 const categories = Object.keys(plans);
 ---
-<section>
+<section id="precio">
 <Container class="md:my-24 mb-10 ">
+  <div class="flex justify-center">
+    <h2 class="text-4xl pb-6 text-center text-[#2B2B2B] font-bold">El plan ideal para ti</h2>
+  </div>
   <div class="container mx-auto md:mt-10 px-4 md:px-8">
-    <!-- Selector de pestañas -->
-    <!-- <div class="flex justify-center gap-2 bg-gray-200 p-2 rounded-full shadow-md border border-gray-800 overflow-x-auto scrollbar-hide"> -->
     <div class="flex justify-center gap-4 px-2 py-2 items-center bg-[#F3F0ED] p-1 rounded-full shadow-md border border-[#2B2B2B] w-fit mx-auto">  
       {categories.map((category, index) => (
         <button
@@ -36,11 +37,11 @@ const categories = Object.keys(plans);
             <div class="xl:p-12 p-6 rounded-[40px] shadow-md bg-[#F3F0ED] text-center">
               <div class="flex justify-center gap-2">
                 <h2 class="md:text-[40px] text-[36px] font-bold">Plan</h2>
-                <h2 class="md:text-[40px] text-[36px] font-bold text-[#854937] pb-9">{plan.name}</h2>
+                <h2 class="md:text-[40px] text-[36px] font-bold text-[#854937] md:pb-9 mb-3">{plan.name}</h2>
               </div>
               
               
-              <ul class="text-[#2B2B2B] font-bold text-xl my-2 pb-12">
+              <ul class="text-[#2B2B2B] font-bold text-xl my-2 md:pb-12 pd:5">
                 {plan.features.map((feature: string) => (
                   <li>✔ {feature}</li>
                 ))}
@@ -48,7 +49,7 @@ const categories = Object.keys(plans);
 
               <div class="flex justify-center gap-2  ">
                 <p class="text-4xl font-bold mt-2.5">{plan.price.currency}</p>
-                <p class="text-5xl font-bold text-[#2B2B2B] my-2 pb-9">
+                <p class="text-5xl font-bold text-[#2B2B2B] my-2 md:pb-9 pb-3">
                  {plan.price.amount} 
                 </p>
                 <p class="text-2xl font-semibold mt-4">{plan.price.frequency}</p>
@@ -56,7 +57,7 @@ const categories = Object.keys(plans);
               
               
               <p class="text-[#545454] text-[18px] my-2 pb-9">{plan.description}</p>
-              <ButtonPrice href={ siteData.pricing.button.link} class="py-6 xl:px-30 px-5 text-[#FFFCFC] font-bold xl:text-xl text-[19px]">{ siteData.pricing.button.text }</ButtonPrice>
+              <ButtonPrice href={ siteData.pricing.button.link} class="md:py-6 py-3 xl:px-30 px-5  text-[#FFFCFC] font-bold xl:text-xl text-[19px]">{ siteData.pricing.button.text }</ButtonPrice>
             </div>
           ))}
         </div>
