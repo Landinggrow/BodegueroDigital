@@ -32,8 +32,8 @@
     }
   },
   "functionalities": {
-    "topinfo":"Impulsa tu restaurante con una solución integral y a la medida",
-    "topdescripcion":"Descubre cómo nuestro sistema transforma cada proceso en una oportunidad de crecimiento. Diseñado para ofrecer eficiencia y una experiencia de usuario superior, cada módulo está pensado para facilitar la operación diaria y potenciar tus resultados.",
+    "topinfo": "Impulsa tu restaurante con una solución integral y a la medida",
+    "topdescripcion": "Descubre cómo nuestro sistema transforma cada proceso en una oportunidad de crecimiento. Diseñado para ofrecer eficiencia y una experiencia de usuario superior, cada módulo está pensado para facilitar la operación diaria y potenciar tus resultados.",
     "title": "Funcionalidades",
     "items": [
       {
@@ -102,7 +102,7 @@
         ]
       },
       {
-        "name":"Reportes",
+        "name": "Reportes",
         "children": [
           {
             "funcion": "Reportes de Ventas",
@@ -117,7 +117,7 @@
         ]
       },
       {
-        "name":"Caja",
+        "name": "Caja",
         "children": [
           {
             "funcion": "Caja",
@@ -127,7 +127,7 @@
         ]
       },
       {
-        "name":"Chatbot",
+        "name": "Chatbot",
         "children": [
           {
             "funcion": "Chatbot WhatsApp",
@@ -144,7 +144,6 @@
       "email": "soporte@nuberest.org.pe",
       "phone": "(+51) 956821285"
     }
-<<<<<<< HEAD
   },
   "support": {
     "title": "Ellos ya confían en nosotros",
@@ -268,7 +267,3 @@
     }
   ]
 }
-=======
-  }
-}
->>>>>>> sebas
