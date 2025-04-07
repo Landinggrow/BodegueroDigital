@@ -19,15 +19,16 @@ import Container from './Container.astro';
     </div>
     <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
       <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-[#FDFCF7] lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-[#FDFCF7]">
-        {siteData.nav.menu.map((item) => (
-          <>
+        {siteData.nav.menu.map((item) => {
+          const computedLink = item.link.startsWith('#') ? `/${item.link}` : item.link;
+          return (
             <li>
-              <a href={item.link} class="block py-2 px-3 text-[#2B2B2B] text-[20px] font-medium rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-[#854937] lg:p-0">
+              <a href={computedLink} class="block py-2 px-3 text-[#2B2B2B] text-[20px] font-medium rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-[#854937] lg:p-0">
                 {item.name}
               </a>
             </li>
-          </>
-        ))}
+          );
+        })}
       </ul>
     </div>
   </Container>
