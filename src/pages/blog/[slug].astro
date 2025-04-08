@@ -5,7 +5,7 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('blog_contenido');
   return posts.map((post: CollectionEntry<'blog_contenido'>) => ({
-    params: { slug: post.id },
+    params: { slug: post.id.replace(/\.md$/, '') },
     props: { post }
   }));
 }
