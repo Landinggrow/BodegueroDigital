@@ -14,7 +14,7 @@ const posts: CollectionEntry<'blog_contenido'>[] = await getCollection('blog_con
       title={post.data.title}
       date={post.data.date.toString()}
       summary={post.data.resume}
-      url={`/blog/${post.id}`}
+      url={`/blog/${post.id.replace(/\.md$/, '')}`}
     />
   ))}
 </div>
