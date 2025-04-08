@@ -1,11 +1,8 @@
-
 ---
-import siteData from '../../site.json';
-
 const { href } = Astro.props;
 const { class: customClass=" " }  = Astro.props;
 ---
 
-<a href={href} class=` focus:ring-4 focus:outline-none focus:ring-[#854937] rounded-full text-center ${customClass}  bg-[#E49542] `>
+<a href={href}  target="_blank" rel="noopener noreferrer" class=`rounded-full text-center ${customClass}  bg-[#E49542] `>
     <slot />
 </a>

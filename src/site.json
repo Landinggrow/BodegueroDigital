@@ -20,15 +20,19 @@
       {
         "name": "Preguntas Frecuentes",
         "link": "#FaQ"
+      },
+      {
+        "name": "Ser Partner",
+        "link": "/partner"
       }
     ],
     "button1": {
       "text": "Comenzar",
-      "link": "https://comercios.andape.pe/factura-facil-rapido"
+      "link": "https://wa.link/dhmgdy"
     },
     "button2": {
-      "text": "Contactar Ventas",
-      "link": "https://wa.link/dhmgdy"
+      "text": "Probar Demo",
+      "link": "https://comercios.andape.pe/systems"
     }
   },
   "functionalities": {
@@ -177,7 +181,7 @@
   "pricing": {
     "button": {
       "text": "Contactar con Ventas",
-      "link": "#"
+      "link": "https://wa.link/dhmgdy"
     },
     "buttons": {
       "monthly": {
@@ -190,31 +194,9 @@
       }
     },
     "plans": {
-      "monthly": [
-        {
-          "name": "NRUS",
-          "features": ["Comprobantes ilimitados"],
-          "price": {
-            "amount": 295,
-            "currency": "S/.",
-            "frequency": "mensual"
-          },
-          "description": "Para empresas en el régimen tributario NRUS."
-        },
-        {
-          "name": "Profesional",
-          "features": ["Comprobantes ilimitados"],
-          "price": {
-            "amount": 590,
-            "currency": "S/.",
-            "frequency": "mensual"
-          },
-          "description": "Incluye dos sucursales, por cada sucursal extra + S/. 100 mensual."
-        }
-      ],
       "annual": [
         {
-          "name": "Plan NRUS",
+          "name": "NRUS",
           "features": ["Comprobantes ilimitados"],
           "price": {
             "amount": 295,
@@ -224,7 +206,7 @@
           "description": "Para empresas en el régimen tributario NRUS. Incluye IGV y 1 certificado."
         },
         {
-          "name": "Plan Profesional",
+          "name": "Profesional",
           "features": ["Comprobantes ilimitados"],
           "price": {
             "amount": 590,
@@ -239,31 +221,42 @@
   "faq": [
     {
       "question": "¿NubeRest está aprobada por SUNAT?",
-      "answer": "Por definir"
+      "answer": "Sí, NubeRest cumple con todos los requisitos de SUNAT para emitir comprobantes electrónicos. Utiliza certificados digitales emitidos por una autoridad certificadora acreditada por INDECOPI. Para ello, trabajamos con Girasol.pe en la emisión de certificados y con Firmeasy.legal para la firma electrónica avanzada, asegurando total validez y conformidad legal."
     },
     {
       "question": "¿Puedo emitir otros comprobantes?",
-      "answer": "Por definir"
+      "answer": "Por supuesto. NubeRest incluye un sistema de facturación electrónica gratuito que permite emitir comprobantes de forma ilimitada. Además, si ya cuentas con tu propio sistema de facturación, puedes integrarlo fácilmente con nuestra plataforma."
     },
     {
       "question": "¿Qué necesito para empezar a emitir facturación electrónica?",
-      "answer": "Por definir"
+      "answer": "Para comenzar a emitir comprobantes con NubeRest, solo necesitas contratar un plan, contar con un certificado digital y tener usuarios autorizados por SUNAT. Puedes obtener tu certificado con nuestros aliados de confianza como Girasol.pe."
     },
     {
       "question": "¿Puedo enviar mis comprobantes vía WhatsApp?",
-      "answer": "Por definir"
+      "answer": "Sí, NubeRest permite el envío automático de comprobantes electrónicos a través de WhatsApp. Puedes usar el número del sistema sin costo adicional, o bien configurar tu propio número personalizado por un valor único de S/150. En ambos casos, el comprobante se entrega directamente en el chat mediante nuestra inteligencia artificial, optimizando la atención al cliente."
     },
     {
       "question": "¿Hay rapidez y automatización para la impresión?",
-      "answer": "Por definir"
+      "answer": "Sí. NubeRest agiliza la gestión en sala permitiendo tomar pedidos desde celulares o tablets, generar comandas e imprimir automáticamente en cocina o barra. Todo se coordina al instante, incluyendo el control de caja y el envío de mensajes por WhatsApp mediante IA."
     },
     {
       "question": "¿Puedo acceder a una prueba demo?",
-      "answer": "Por definir"
+      "answer": "Sí, puedes explorar NubeRest con una demo gratuita que te permitirá conocer sus funciones principales en acción. Es una excelente forma de evaluar cómo se adapta a las necesidades de tu restaurante antes de contratar un plan."
     },
     {
-      "question": "¿Está segura mi información?",
-      "answer": "Aquí tienes algunos ejemplos de oraciones para diferentes propósitos: \"¿Dónde está el libro?\", \"¡Qué bonito día!\", \"No puedo ir a la fiesta\", \"Los niños jugaban en el parque\""
+      "question": "¿Por qué ser partner?",
+      "answer": "Convertirte en partner de NubeRest te da acceso a tarifas preferenciales, herramientas exclusivas y certificados digitales incluidos. Solo necesitas activar tu suscripción para comenzar. Para más detalles, visita nuestra sección Ser Partner."
     }
-  ]
+  ],
+  "partner": {
+    "title": "Únete a Nuestro Programa de Desarrolladores de Negocio",
+    "description": "¿Eres emprendedor, desarrollador de negocios o una pequeña empresa en busca de una oportunidad rentable? Conviértete en parte de nuestro exclusivo programa de comercialización y lleva nuestra solución a más clientes mientras generas ingresos.",
+    "benefitstitle": "Beneficios Exclusivos",
+    "benefits": [
+      "Márgenes de ganancia atractivos",
+      "Soporte técnico especializado",
+      "Atención personalizada",
+      "Acceso exclusivo al software"
+    ]
+  }
 }

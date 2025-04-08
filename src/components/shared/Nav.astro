@@ -9,7 +9,7 @@ import Container from './Container.astro';
       <img src="/images/LogoNubeRest.png" class="md:h-6 h-5" alt="Logo de NubeRest">
     </a>
     <div class="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
-      <a  href={ siteData.nav.button1.link} class="text-white bg-[#E49542] hover:bg-[#854937] focus:ring-4 focus:outline-none focus:ring-[#854937] font-medium rounded-full text-[20px] px-5 py-2 text-center ">{siteData.nav.button1.text}</a>
+      <a  href={ siteData.nav.button1.link}  target="_blank" rel="noopener noreferrer" class="text-white bg-[#E49542] hover:bg-[#854937] font-medium rounded-full text-[20px] px-5 py-2 text-center ">{siteData.nav.button1.text}</a>
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center  p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Abrir el menu</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -45,7 +45,6 @@ import Container from './Container.astro';
     }
   });
 
-  // Cerrar el menú si se hace clic fuera (opcional)
   document.addEventListener("click", (event) => {
     if (menu && toggleButton && !menu.contains(event.target as Node) && !toggleButton.contains(event.target as Node)) {
       menu.classList.add("hidden");

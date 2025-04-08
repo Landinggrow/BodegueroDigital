@@ -12,18 +12,7 @@ const categories = Object.keys(plans);
     <h2 class="text-4xl pb-6 text-center text-[#2B2B2B] font-bold">El plan ideal para ti</h2>
   </div>
   <div class="container mx-auto md:mt-10 px-4 md:px-8">
-    <!-- <div class="flex justify-center gap-4 px-2 py-2 items-center bg-[#F3F0ED] p-1 rounded-full shadow-md border border-[#2B2B2B] w-fit mx-auto">  
-      {categories.map((category, index) => (
-        <button
-          class={`md:px-15 py-2 px-8 text-sm md:text-base lg:text-lg font-bold rounded-full transition-colors duration-200 flex-shrink-0 ${index === 0 ? 'bg-[#854937] text-white shadow-lg' : 'bg-white text-gray-800 hover:bg-gray-300'}`}
-          data-tab-target
-          data-tab-id={category}
-        >
-          {category === 'monthly' ? 'Mensual' : 'Anual'}
-        </button>
-      ))}
-    </div> -->
-
+    
     <div data-tab-content class="mt-6">
       {categories.map((category, index) => (
         <div 
@@ -65,40 +54,3 @@ const categories = Object.keys(plans);
   </div>
 </Container>
 </section>
-
-<!-- <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabButtons = document.querySelectorAll('[data-tab-target]');
-    const tabPanes = document.querySelectorAll('[data-tab-pane]');
-
-    // Función para activar una pestaña
-    const activateTab = (selectedTab) => {
-      const tabId = selectedTab.dataset.tabId;
-
-      // Cambiar la clase activa en los botones
-      tabButtons.forEach(tab => {
-        tab.classList.remove('bg-gray-800', 'text-white');
-        tab.classList.add('bg-white', 'text-gray-800');
-      });
-
-      // Ocultar todos los panes y mostrar el seleccionado
-      tabPanes.forEach(pane => {
-        pane.hidden = pane.dataset.tabId !== tabId;
-      });
-
-      // Activar la pestaña seleccionada
-      selectedTab.classList.add('bg-[#854937]', 'text-white');
-      selectedTab.classList.remove('bg-white', 'text-gray-800');
-    };
-
-    // Añadir evento de click a los botones
-    tabButtons.forEach(tab => {
-      tab.addEventListener('click', () => activateTab(tab));
-    });
-
-    // Activar la primera pestaña por defecto
-    if (tabButtons.length > 0) {
-      activateTab(tabButtons[0]);
-    }
-  });
-</script> -->
