@@ -3,6 +3,7 @@ import Container from "./Container.astro"
 import Button from "./Button.astro"
 import IconStar from "../icons/IconStar.astro"
 import siteData from "../../site.json"
+import ButtonContact from "./ButtonContact.astro"
 ---
 
 <Container>
@@ -25,8 +26,12 @@ import siteData from "../../site.json"
         ))}
       </ul>
     </div>
-    <div class="flex justify-center items-center max-w-xl mx-auto mb-5">
+    <!-- <div class="flex justify-center items-center max-w-xl mx-auto mb-5">
       <Button />
+    </div> -->
+    <div class="mt-10 flex flex-col justify-center md:flex-row gap-2">
+      <Button  aria-label="Descubre más sobre la gestión gastronómica" />
+      <ButtonContact >
     </div>
   </div>
 </section>

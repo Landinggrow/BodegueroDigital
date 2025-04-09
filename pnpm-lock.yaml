@@ -14,6 +14,9 @@ importers:
       '@astrojs/react':
         specifier: ^4.2.2
         version: 4.2.2(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(jiti@2.4.2)(lightningcss@1.29.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@fontsource-variable/lexend':
+        specifier: ^5.2.6
+        version: 5.2.6
       '@tailwindcss/vite':
         specifier: ^4.0.17
         version: 4.0.17(vite@6.2.3(jiti@2.4.2)(lightningcss@1.29.2))
@@ -308,6 +311,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/lexend@5.2.6':
+    resolution: {integrity: sha512-rDBYVTp0cMaj/UNK2m5EPHMZw3MZcl2CXdZVlv+OQwpg88r5g9prS60mayZ1N+hyH7XRka2YExAFEYBLEv0NRQ==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2178,6 +2184,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.1':
     optional: true
+
+  '@fontsource-variable/lexend@5.2.6': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

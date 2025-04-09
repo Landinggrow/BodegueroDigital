@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@fontsource-variable/lexend";
 
 .text-center {
   text-align: center;

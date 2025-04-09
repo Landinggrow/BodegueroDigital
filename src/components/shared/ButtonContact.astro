@@ -1,0 +1,10 @@
+---
+import siteData from '../../site.json';
+
+const { class: customClass = "" } = Astro.props;
+---
+
+<a href={ siteData.nav.button1.link}  target="_blank" rel="noopener noreferrer"
+                   class={`text-white bg-[#E49542] hover:bg-[#854937]  font-medium rounded-full text-[20px] px-10 py-2  sm:px-16 text-center transition-all ${customClass}`}>
+                   { siteData.nav.button1.text} 
+</a>

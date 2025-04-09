@@ -6,7 +6,7 @@ import ButtonPrice from './ButtonPrice.astro';
 const plans: { [key: string]: { name: string; features: string[]; price: { amount: number; currency: string; frequency: string }; description: string }[] } = siteData.pricing.plans;
 const categories = Object.keys(plans);
 ---
-<section id="precio">
+<section id="precio" class="scroll-mt-32">
 <Container class="md:my-24 mb-10 ">
   <div class="flex justify-center">
     <h2 class="text-4xl pb-6 text-center text-[#2B2B2B] font-bold">El plan ideal para ti</h2>
