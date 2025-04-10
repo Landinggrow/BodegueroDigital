@@ -258,5 +258,23 @@
       "Atención personalizada",
       "Acceso exclusivo al software"
     ]
+  },
+  "collaborators": {
+    "title": "Nuestros Colaboradores",
+    "description": "Conoce a nuestros aliados estratégicos que nos ayudan a ofrecer soluciones innovadoras y confiables.",
+    "items": [
+      {
+        "name": "FirmEasy",
+        "logo": "/images/colaboradores/firmeasy.png",
+        "link": "https://firmeasy.legal/",
+        "description": "FirmEasy ofrece soluciones avanzadas de firma electrónica, garantizando seguridad y validez legal en cada documento firmado."
+      },
+      {
+        "name": "Girasol",
+        "logo": "/images/colaboradores/girasol.png",
+        "link": "https://girasol.pe/",
+        "description": "Girasol es un proveedor confiable de certificados digitales y soluciones de facturación electrónica aprobadas por SUNAT."
+      }
+    ]
   }
 }

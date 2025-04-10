@@ -1,0 +1,37 @@
+---
+import Container from '../shared/Container.astro';
+import siteData from '../../site.json';
+import ButtonPrice from './ButtonPrice.astro';
+
+const collaborators = siteData.collaborators;
+---
+<section id="colaboradores" class="scroll-mt-32">
+  <Container class="md:my-24 mb-10">
+    <div class="flex justify-center">
+      <h2 class="text-4xl pb-6 text-center text-[#2B2B2B] font-bold">{collaborators.title}</h2>
+    </div>
+    <p class="text-center text-[#545454] text-lg mb-10">{collaborators.description}</p>
+    <div class="container mx-auto md:mt-10 px-4 md:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {collaborators.items.map((collaborator) => (
+          <div class="xl:p-12 p-6 rounded-[40px] shadow-md bg-[#F3F0ED] text-center">
+            <div class="flex justify-center">
+              <img
+                src={collaborator.logo}
+                alt={`Logo de ${collaborator.name}`}
+                class="h-18 w-auto mb-6"
+              />
+            </div>
+            <p class="text-[#545454] text-[18px] mb-15 text-justify">{collaborator.description}</p>
+            <ButtonPrice
+              href={collaborator.link}
+              class="md:py-6 py-3 xl:px-30 px-5 text-[#FFFCFC] font-bold xl:text-xl text-[19px]"
+            >
+              Visitar sitio web
+            </ButtonPrice>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
