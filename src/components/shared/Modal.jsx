@@ -1,199 +1,32 @@
-// import React from "react";
-
-// const Modal = ({ isOpen, onClose }) => {
-//   return (
-//     <div
-//       className={`fixed inset-0 z-50 flex items-center justify-center bg-[#854937] bg-opacity-30 ${
-//         isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-//       } transition-opacity duration-300`}
-//     >
-//       <div
-//         className={`bg-[#F3F0ED] p-6 rounded-xl shadow-lg w-full max-w-md transform ${
-//           isOpen ? "scale-100" : "scale-95"
-//         } transition-transform duration-300`}
-//       >
-//         <div className="top-0 flex justify-between items-center gap-2 mb-5">
-//           <h2 className="text-2xl text-left font-black">
-//             Inscríbete para una Demostración online
-//           </h2>
-//           <button
-//             type="button"
-//             className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md"
-//             onClick={onClose}
-//           >
-//             <svg
-//               class="w-6 h-6 text-gray-800 "
-//               aria-hidden="true"
-//               xmlns="http://www.w3.org/2000/svg"
-//               width="24"
-//               height="24"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//             >
-//               <path
-//                 stroke="currentColor"
-//                 stroke-linecap="round"
-//                 stroke-linejoin="round"
-//                 stroke-width="2"
-//                 d="M6 18 17.94 6M18 18 6.06 6"
-//               />
-//             </svg>
-//           </button>
-//         </div>
-//         <form>
-//           <label className="block text-sm text-left font-medium text-gray-700 mb-2">
-//             Nombre:
-//             <input
-//               type="text"
-//               name="name"
-//               placeholder="Ingresa tu nombre"
-//               className="mt-1 pl-2 block w-full h-8 border-gray-300 rounded-md shadow-sm focus:ring-[#E49542] focus:border-[#E49542] bg-[#D9D9D9]"
-//               required
-//             />
-//           </label>
-//           <label className="block text-sm text-left font-medium text-gray-700 mb-2">
-//             Correo:
-//             <input
-//               type="email"
-//               placeholder="Ingresa tu correo"
-//               className="mt-1 pl-2 block w-full h-8 border-gray-300 rounded-md shadow-sm focus:ring-[#E49542] focus:border-[#E49542] bg-[#D9D9D9]"
-//               required
-//             />
-//           </label>
-//           <label className="block text-sm font-medium text-gray-700 mb-2">
-//             Nombre de tu restaurante o negocio:
-//             <input
-//               type="text"
-//               name="businessName"
-//               className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#E49542] focus:border-[#E49542]"
-//               required
-//             />
-//           </label>
-
-//           {/* Dropdown: ¿Qué tipo de negocio tienes? */}
-//           <label className="block text-sm font-medium text-gray-700 mb-2">
-//             ¿Qué tipo de negocio tienes?
-//             <select
-//               name="businessType"
-//               className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#E49542] focus:border-[#E49542]"
-//               required
-//             >
-//               <option value="Restaurante">Restaurante</option>
-//               <option value="Cafetería">Cafetería</option>
-//               <option value="Food truck">Food truck</option>
-//               <option value="Bodega">Bodega</option>
-//               <option value="Otro">Otro</option>
-//             </select>
-//           </label>
-
-//           {/* Selección múltiple: ¿Qué te interesa automatizar? */}
-//           <label className="block text-sm font-medium text-gray-700 mb-2">
-//             ¿Qué te interesa automatizar?
-//             <div className="mt-2 space-y-2">
-//               <label className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   name="automation"
-//                   value="Toma de pedidos"
-//                   className="mr-2"
-//                 />
-//                 Toma de pedidos
-//               </label>
-//               <label className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   name="automation"
-//                   value="Facturación electrónica"
-//                   className="mr-2"
-//                 />
-//                 Facturación electrónica
-//               </label>
-//               <label className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   name="automation"
-//                   value="Gestión de caja"
-//                   className="mr-2"
-//                 />
-//                 Gestión de caja
-//               </label>
-//               <label className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   name="automation"
-//                   value="Delivery"
-//                   className="mr-2"
-//                 />
-//                 Delivery
-//               </label>
-//               <label className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   name="automation"
-//                   value="Reportes y control"
-//                   className="mr-2"
-//                 />
-//                 Reportes y control
-//               </label>
-//               <label className="flex items-center">
-//                 <input
-//                   type="checkbox"
-//                   name="automation"
-//                   value="Otro"
-//                   className="mr-2"
-//                 />
-//                 Otro
-//               </label>
-//             </div>
-//           </label>
-//           <div className="mt-4 flex justify-center gap-2">
-//             <button
-//               type="submit"
-//               className="bg-[#E49542] hover:bg-[#854937] text-white px-4 py-2 rounded-md"
-//             >
-//               Acceder a la demo gratuita
-//             </button>
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Modal;
-
 import React, { useState } from "react";
 
 const Modal = ({ isOpen, onClose }) => {
-  const [activeDropdown, setActiveDropdown] = useState(null); // Controla cuál menú está abierto
-  const [selectedOptions, setSelectedOptions] = useState([]); // Estado para las opciones seleccionadas
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
-  // Abrir/Cerrar dropdowns asegurando que solo uno esté activo
   const toggleDropdown = (dropdown) => {
     setActiveDropdown((prev) => (prev === dropdown ? null : dropdown));
   };
 
-  // Manejar selección de las opciones
   const handleOptionChange = (event) => {
     const value = event.target.value;
     if (event.target.checked) {
-      setSelectedOptions((prev) => [...prev, value]); // Agregar la opción seleccionada
+      setSelectedOptions((prev) => [...prev, value]);
     } else {
-      setSelectedOptions((prev) => prev.filter((option) => option !== value)); // Eliminar la opción deseleccionada
+      setSelectedOptions((prev) => prev.filter((option) => option !== value));
     }
   };
 
-  // Función para limpiar las opciones seleccionadas y cerrar el modal
   const handleClose = () => {
-    setSelectedOptions([]); // Limpiar opciones seleccionadas
-    setActiveDropdown(null); // Cerrar todos los dropdowns
-    onClose(); // Llamar a la función de cierre del modal
+    setSelectedOptions([]);
+    setActiveDropdown(null);
+    onClose();
   };
 
-  if (!isOpen) return null; // Si el modal no está abierto, no se muestra
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/55">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         <div className="flex justify-between gap-2 items-center">
           <h2 className="text-2xl text-left font-bold mb-4">
@@ -202,7 +35,7 @@ const Modal = ({ isOpen, onClose }) => {
           <button
             type="button"
             className="bg-gray-200 hover:bg-gray-300 px-2 py-2 mb-2 rounded-md"
-            onClick={handleClose} // Se utiliza la nueva función para limpiar y cerrar el modal
+            onClick={handleClose}
           >
             <svg
               class="w-6 h-6 text-gray-800 "

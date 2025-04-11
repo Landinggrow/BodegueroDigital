@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import Button from "./Button"; // Archivo Button.jsx
-import Modal from "./Modal"; // Archivo Modal.jsx
+import Button from "./Button";
+import Modal from "./Modal";
 
 const DemoSection = () => {
-  const [isModalOpen, setModalOpen] = useState(false); // Estado del modal
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
-    console.log("Abrir Modal"); // Verifica que este mensaje aparezca en la consola
-    setModalOpen(true); // Cambia el estado a "true"
+    console.log("Abrir Modal");
+    setModalOpen(true);
   };
 
   const closeModal = () => {
-    console.log("Cerrar Modal"); // Verifica que este mensaje aparezca en la consola
-    setModalOpen(false); // Cambia el estado a "false"
+    console.log("Cerrar Modal");
+    setModalOpen(false);
   };
 
   return (
