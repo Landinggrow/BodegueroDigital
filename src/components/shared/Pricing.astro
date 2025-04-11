@@ -22,7 +22,7 @@ const categories = Object.keys(plans);
           hidden={index !== 0}
         >
           {plans[category].map((plan: { name: string; features: string[]; price: { amount: number; currency: string; frequency: string }; description: string }) => (
-            <div class="xl:p-12 p-6 rounded-[40px] shadow-md bg-[#F3F0ED] text-center">
+            <div class="xl:p-12 p-6 rounded-[40px] shadow-xl bg-[#F3F0ED] text-center">
               <div class="flex justify-center gap-2">
                 <h2 class="md:text-[40px] text-[36px] font-bold">Plan</h2>
                 <h2 class="md:text-[40px] text-[36px] font-bold text-[#854937] md:pb-9 mb-3">{plan.name}</h2>
@@ -45,7 +45,7 @@ const categories = Object.keys(plans);
               
               
               <p class="text-[#545454] text-[18px] my-2 pb-9">{plan.description}</p>
-              <ButtonPrice href={ siteData.pricing.button.link} class="md:py-6 py-3 xl:px-30 px-5  text-[#FFFCFC] font-bold xl:text-xl text-[19px]">{ siteData.pricing.button.text }</ButtonPrice>
+              <ButtonPrice href={ siteData.pricing.button.link} class="md:py-6 py-3 xl:px-30 px-5  text-[#FFFCFC] font-bold xl:text-xl text-[17px]">{ siteData.pricing.button.text }</ButtonPrice>
             </div>
           ))}
         </div>

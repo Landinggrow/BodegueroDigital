@@ -4,6 +4,7 @@ import Button from "../shared/Button.astro";
 import HorizontalScroll from "../shared/HorizontalScroll";
 import siteData from "../../site.json"
 import ButtonContact from "../shared/ButtonContact.astro"
+import DemoSection from "../shared/DemoSection.jsx";
 ---
 
 
@@ -19,9 +20,13 @@ import ButtonContact from "../shared/ButtonContact.astro"
           <p class="mt-4 text-2xl text-gray-600">
             La solución completa para administrar tu restaurante con herramientas modernas y todo desde un solo lugar.
           </p>
-          <div class="mt-10 flex flex-col justify-center xl:flex-row gap-2">
-            <Button  aria-label="Descubre más sobre la gestión gastronómica" />
-            <ButtonContact >
+          <div class="mt-10 flex flex-col justify-center items-center xl:flex-row gap-4">
+            <div >
+              <DemoSection  client:load />
+            </div>
+            <div >
+              <ButtonContact  />
+            </div>
           </div>
         </article>
 
