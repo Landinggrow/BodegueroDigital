@@ -264,12 +264,15 @@
     "description": "Conoce a nuestros aliados estratégicos que nos ayudan a ofrecer soluciones innovadoras y confiables.",
     "items": [
       {
+<<<<<<< HEAD
         "name": "Andape",
         "logo": "/images/colaboradores/logotipoAndape.png",
         "link": "https://andape.pe/",
         "description": "Andape impulsa tu negocio con soluciones seguras, innovadoras y fáciles de gestionar, todo al alcance de tu mano."
       },
       {
+=======
+>>>>>>> d258ba9dc1bf932ee692e7d88c0afbeac598d06d
         "name": "Girasol",
         "logo": "/images/colaboradores/girasol.png",
         "link": "https://girasol.pe/",
