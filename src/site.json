@@ -264,10 +264,10 @@
     "description": "Conoce a nuestros aliados estratégicos que nos ayudan a ofrecer soluciones innovadoras y confiables.",
     "items": [
       {
-        "name": "FirmEasy",
-        "logo": "/images/colaboradores/firmeasy.png",
-        "link": "https://firmeasy.legal/",
-        "description": "FirmEasy ofrece soluciones avanzadas de firma electrónica, garantizando seguridad y validez legal en cada documento firmado."
+        "name": "Andape",
+        "logo": "/images/colaboradores/logotipoAndape.png",
+        "link": "https://andape.pe/",
+        "description": "Andape impulsa tu negocio con soluciones seguras, innovadoras y fáciles de gestionar, todo al alcance de tu mano."
       },
       {
         "name": "Girasol",
