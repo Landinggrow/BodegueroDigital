@@ -28,11 +28,15 @@
     ],
     "button1": {
       "text": "Comenzar",
-      "link": "https://wa.link/dhmgdy"
+      "link": "https://wa.me/51919452469?text=Hola,%20estoy%20interesado%20en%20el%20sistema%20de%20Gestion%20de%20Restaurantes%20NubeRest"
     },
     "button2": {
       "text": "Probar Demo",
       "link": "https://comercios.andape.pe/systems"
+    },
+    "button3": {
+      "text": "Comenzar",
+      "link": "https://wa.me/51919452469?text=Hola,%20estoy%20interesado%20en%20ser%20Partner%20de%20NubeRest"
     }
   },
   "functionalities": {
@@ -139,6 +143,46 @@
             "imagen": "/images/functionality/chat_bot.svg"
           }
         ]
+      },
+      {
+        "name": "Carta Digital",
+        "children": [
+          {
+            "funcion": "Carta Digital",
+            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
+            "imagen": "/images/functionality/chat_bot.svg"
+          }
+        ]
+      },
+      {
+        "name": "Delivery",
+        "children": [
+          {
+            "funcion": "Delivery",
+            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
+            "imagen": "/images/functionality/chat_bot.svg"
+          }
+        ]
+      },
+      {
+        "name": "Asistencia",
+        "children": [
+          {
+            "funcion": "Asistencia",
+            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
+            "imagen": "/images/functionality/chat_bot.svg"
+          }
+        ]
+      },
+      {
+        "name": "Cobranza",
+        "children": [
+          {
+            "funcion": "Cobranza",
+            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
+            "imagen": "/images/functionality/chat_bot.svg"
+          }
+        ]
       }
     ]
   },
@@ -146,7 +190,7 @@
     "content": {
       "description": "Somos NubeRest, una solución integral para restaurantes y negocios gastronómicos. Ofrecemos diversas herramientas para optimizar la operación de tu negocio.",
       "email": "soporte@nuberest.org.pe",
-      "phone": "(+51) 956821285"
+      "phone": "(+51) 919 452 469"
     }
   },
   "support": {
@@ -221,7 +265,7 @@
   "faq": [
     {
       "question": "¿NubeRest está aprobada por SUNAT?",
-      "answer": "Sí, NubeRest cumple con todos los requisitos de SUNAT para emitir comprobantes electrónicos. Utiliza certificados digitales emitidos por una autoridad certificadora acreditada por INDECOPI. Para ello, trabajamos con Girasol.pe en la emisión de certificados y con Firmeasy.legal para la firma electrónica avanzada, asegurando total validez y conformidad legal."
+      "answer": "Sí, NubeRest cumple con todos los requisitos de SUNAT para emitir comprobantes electrónicos. Utiliza certificados digitales emitidos por una autoridad certificadora acreditada por INDECOPI. Para ello, trabajamos con Girasol.pe en la emisión de certificados digitales."
     },
     {
       "question": "¿Puedo emitir otros comprobantes?",
@@ -233,7 +277,7 @@
     },
     {
       "question": "¿Puedo enviar mis comprobantes vía WhatsApp?",
-      "answer": "Sí, NubeRest permite el envío automático de comprobantes electrónicos a través de WhatsApp. Puedes usar el número del sistema sin costo adicional, o bien configurar tu propio número personalizado por un valor único de S/150. En ambos casos, el comprobante se entrega directamente en el chat mediante nuestra inteligencia artificial, optimizando la atención al cliente."
+      "answer": "Sí, NubeRest permite el envío automático de comprobantes electrónicos a través de WhatsApp. Puedes usar el número del sistema sin costo adicional, o bien configurar tu propio número personalizado por un valor único de S/150.00/Anuales. En ambos casos, el comprobante se entrega directamente en el chat mediante nuestra inteligencia artificial, optimizando la atención al cliente."
     },
     {
       "question": "¿Hay rapidez y automatización para la impresión?",
@@ -245,7 +289,7 @@
     },
     {
       "question": "¿Por qué ser partner?",
-      "answer": "Convertirte en partner de NubeRest te da acceso a tarifas preferenciales, herramientas exclusivas y certificados digitales incluidos. Solo necesitas activar tu suscripción para comenzar. Para más detalles, visita nuestra sección Ser Partner."
+      "answer": "Al convertirte en partner de NubeRest, obtendrás tarifas preferenciales, herramientas exclusivas y certificados digitales incluidos. Activa tu suscripción para comenzar. Para formalizar tu alianza, deberás presentarnos tu ficha RUC y firmar un contrato a través de Firmeasy.legal, garantizando así su validez y seguridad."
     }
   ],
   "partner": {

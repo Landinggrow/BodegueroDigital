@@ -7,7 +7,7 @@ const functionalities: { name: string; children: { funcion: string; description:
 <Container>
   <div class="container mx-auto mt-10 px-4 md:px-8">
     <!-- Selector de pestañas con diseño responsive -->
-    <div class="flex flex-nowrap lg:flex-wrap justify-start lg:justify-center gap-2 bg-[#F3F0ED] p-2 rounded-full shadow-md border border-[#2B2B2B] overflow-x-auto lg:overflow-visible scrollbar-hide">
+    <div class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 bg-[#F3F0ED] p-2 rounded-3xl shadow-md border-2 border-[#2B2B2B] overflow-x-auto md:overflow-visible scrollbar-hide">
       {functionalities.map((item, index) => (
         <button
           class={`px-4 py-2 text-sm md:text-base lg:text-lg font-medium rounded-full transition-colors duration-200 flex-shrink-0 lg:flex-1 whitespace-nowrap text-center ${index === 0 ? 'bg-[#854937] text-[#FDFCF7] shadow-lg' : 'bg-[#FDFCF7] text-[#2B2B2B] hover:bg-[#E49542]/20'}`}

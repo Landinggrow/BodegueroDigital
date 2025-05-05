@@ -5,6 +5,20 @@ interface FaqItem {
 }
 
 const { items = [] }: { items?: FaqItem[] } = Astro.props;
+
+
+// Función que reemplaza "Girasol.pe" por un enlace que se abre en nueva pestaña.
+const transformAnswer = (answer: string): string => {
+  return answer
+  .replace(
+    "Girasol.pe",
+    `<a href="https://girasol.pe" target="_blank" rel="noreferrer" class="underline text-blue-500 hover:text-blue-700">Girasol.pe</a>`
+  )
+  .replace(
+    "Firmeasy.legal",
+    `<a href="https://firmeasy.legal" target="_blank" rel="noreferrer" class="underline text-blue-500 hover:text-blue-700">Firmeasy.legal</a>`
+  );
+};
 ---
 
 <ul class="space-y-4">
@@ -22,7 +36,7 @@ const { items = [] }: { items?: FaqItem[] } = Astro.props;
           style="max-height: 0;"
         >
           <div class="py-4 break-words text-[#2B2B2B]">
-            {item.answer}
+            <div set:html={transformAnswer(item.answer)}></div>
           </div>
         </div>
       </li>
