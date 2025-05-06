@@ -3,6 +3,13 @@ import Container from '../shared/Container.astro';
 import siteData from '../../site.json';
 
 const functionalities: { name: string; children: { funcion: string; description: string; imagen: string }[] }[] = siteData.functionalities.items;
+
+const transformAnswer = (text: string): string => {
+  return text.replace(
+    "Prueba ahora la carta digital.",
+    `<a href="https://comercios.andape.pe/carta-digital/demo-restaurante" target="_blank" rel="noopener noreferrer" class="underline text-blue-500 hover:text-blue-700">Prueba ahora la carta digital.</a>`
+  );
+};
 ---
 <Container>
   <div class="container mx-auto mt-10 px-4 md:px-8">
@@ -33,7 +40,9 @@ const functionalities: { name: string; children: { funcion: string; description:
               <img src={child.imagen} alt={child.funcion} class="w-full md:w-1/2 max-w-sm rounded-lg shadow-md mb-4 md:mb-0" />
               <div class="md:w-1/2 px-4 flex flex-col justify-center">
                 <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-[#2B2B2B] mb-4 text-center md:text-left">{child.funcion}</h2>
-                <p class="text-base md:text-lg lg:text-xl text-[#2B2B2B] text-justify leading-relaxed">{child.description}</p>
+                <p class="text-base md:text-lg lg:text-xl text-[#2B2B2B] text-justify leading-relaxed">
+                  <span set:html={transformAnswer(child.description)}></span>
+                </p>
               </div>
             </div>
           ))}

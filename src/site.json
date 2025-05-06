@@ -28,7 +28,7 @@
     ],
     "button1": {
       "text": "Comenzar",
-      "link": "https://wa.me/51919452469?text=Hola,%20estoy%20interesado%20en%20el%20sistema%20de%20Gestion%20de%20Restaurantes%20NubeRest"
+      "link": "https://wa.me/51919452469?text=Hola,%20estoy%20interesado%20en%20el%20sistema%20de%20Gestión%20de%20Restaurantes%20NubeRest"
     },
     "button2": {
       "text": "Probar Demo",
@@ -149,8 +149,8 @@
         "children": [
           {
             "funcion": "Carta Digital",
-            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
-            "imagen": "/images/functionality/chat_bot.svg"
+            "description": "Mantén tu menú siempre actualizado y cautiva a tus clientes con la flexibilidad de la carta digital de NubeRest. ¿Tienes un plato especial del día? ¿Necesitas ajustar precios o destacar promociones? Con nuestra carta digital, los cambios son instantáneos y sin complicaciones. Prueba ahora la carta digital.",
+            "imagen": "/images/functionality/carta_digital.svg"
           }
         ]
       },
@@ -159,8 +159,8 @@
         "children": [
           {
             "funcion": "Delivery",
-            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
-            "imagen": "/images/functionality/chat_bot.svg"
+            "description": "Cuando un cliente realiza un pedido de delivery, éste se integra automáticamente a tu sistema de gestión. Podrás visualizar todos los pedidos en tiempo real, gestionarlos de manera organizada, asignar repartidores y realizar un seguimiento eficiente de cada entrega. Además, NubeRest te permite definir zonas de reparto, calcular costos de envío automáticamente y comunicarte fácilmente con tus clientes sobre el estado de sus pedidos.",
+            "imagen": "/images/functionality/proximamente.svg"
           }
         ]
       },
@@ -169,8 +169,8 @@
         "children": [
           {
             "funcion": "Asistencia",
-            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
-            "imagen": "/images/functionality/chat_bot.svg"
+            "description": "En el futuro, NubeRest revolucionará la forma en que gestionas la atención al cliente en tu restaurante. Tus clientes podrán realizar solicitudes específicas desde la carta digital en sus dispositivos, como pedir la cuenta, solicitar más bebidas o llamar al camarero, todo con un simple toque. Esto agilizará la comunicación y reducirá los tiempos de espera..",
+            "imagen": "/images/functionality/proximamente.svg"
           }
         ]
       },
@@ -179,8 +179,8 @@
         "children": [
           {
             "funcion": "Cobranza",
-            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
-            "imagen": "/images/functionality/chat_bot.svg"
+            "description": "Próximamente, NubeRest transformará el proceso de cobro en tu restaurante. Tus clientes podrán elegir entre una amplia variedad de métodos de pago directamente desde la mesa (a través de sus dispositivos o dispositivos portátiles) o en el punto de venta. Esto incluirá tarjetas de crédito y débito, pagos móviles, billeteras virtuales y otras opciones populares.",
+            "imagen": "/images/functionality/proximamente.svg"
           }
         ]
       }
