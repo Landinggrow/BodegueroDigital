@@ -4,7 +4,7 @@ import "./HorizontalScroll.css";
 const HorizontalScroll = () => {
   return (
     <div className="horizontal-scroll-wrapper rounded-3xl">
-      <div className="horizontal-scroll-content">
+      <div className="horizontal-scroll-content bg-[#F9FBFC]">
         {siteData.support.images.map((image, index) => (
           <div key={index} className="scroll-item">
             <img
