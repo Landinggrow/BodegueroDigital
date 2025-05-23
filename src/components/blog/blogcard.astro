@@ -9,10 +9,18 @@ interface BlogCardProps {
 const { title, date, summary, url } = Astro.props as BlogCardProps;
 ---
 
-<div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow">
+<!-- <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow">
   <a href={url} class="block">
     <p class="text-sm text-gray-500 mb-2">{date}</p>
     <h3 class="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
     <p class="text-gray-600 text-sm">{summary}</p>
+  </a>
+</div> -->
+
+<div class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
+  <a href={url} class="block">
+    <p class="text-sm text-gray-500 mb-3">{date}</p>
+    <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug">{title}</h3>
+    <p class="text-gray-700 text-base leading-relaxed">{summary}</p>
   </a>
 </div>

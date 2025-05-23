@@ -8,48 +8,87 @@ export interface Props {
 const { title, date, resume } = Astro.props;
 ---
 
-<div class="article-header">
-  <h1 class="article-title">{title}</h1>
-  <p class="article-date">{new Date(date).toLocaleDateString('es-PE', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-  <p class="article-resume">{resume}</p>
+<div class="article-header-container">
+  <div class="article-header">
+    <h1 class="article-title">{title}</h1>
+    <p class="article-date">{new Date(date).toLocaleDateString('es-PE', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+    <p class="article-resume">{resume}</p>
+  </div>
 </div>
 
 <style>
+  /* Contenedor principal para centrar y dar un poco de margen exterior al header */
+  .article-header-container {
+    background-color: #092858; /* Fondo principal del encabezado */
+    padding: 2rem 1rem; /* Padding base */
+    border-bottom: 4px solid #7A9EC6; /* Línea de énfasis como un borde inferior */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+    margin-bottom: 3rem; /* Más espacio entre el header y el contenido del artículo */
+    border-radius: 0 0 12px 12px; /* Redondear solo las esquinas inferiores */
+    text-align: center; /* Centrar todo el texto */
+  }
+
   .article-header {
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: #FDFCF7; /* Fondo secundario */
-    border-bottom: 4px solid #E49542; /* Línea de énfasis */
-    border-radius: 8px;
-    margin-bottom: 2rem;
+    max-width: 900px; /* Limitar el ancho del contenido del header para mejor legibilidad en pantallas grandes */
+    margin: 0 auto; /* Centrar el contenido dentro del contenedor */
+    
   }
 
   .article-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2B2B2B; /* Color para resaltar textos */
-    margin-bottom: 0.5rem;
+    font-size: 2.8rem; /* Ligeramente más grande para más impacto */
+    font-weight: 800; /* Más audaz para resaltar */
+    color: #ffffff; /* Blanco puro para el título */
+    margin-bottom: 0.8rem; /* Más espacio debajo del título */
+    line-height: 1.2; /* Mejorar el espaciado entre líneas para títulos largos */
   }
 
   .article-date {
     font-size: 1rem;
-    color: #545454; /* Color para textos secundarios */
-    margin-bottom: 1rem;
+    color: #cccccc; /* Un gris claro para la fecha, más suave que el blanco puro */
+    margin-bottom: 1.5rem; /* Más espacio debajo de la fecha */
   }
 
   .article-resume {
-    font-size: 1.25rem;
-    color: #5B2C6F; /* Color destacado */
-    font-style: italic;
+    font-size: 1.15rem; /* Un poco más pequeño que el 1.25rem anterior, para mejor legibilidad como párrafo introductorio */
+    color: #e0e7ff; /* Un azul muy claro, con mejor contraste que el anterior */
+    font-style: normal; /* Quitar el italic por defecto para mejor legibilidad. Si quieres italic, aplícalo solo a frases clave en el HTML directamente */
+    line-height: 1.6; /* Aumentar el line-height para una lectura más cómoda */
+    max-width: 700px; /* Limitar el ancho del resumen para que no sea demasiado largo en pantallas anchas */
+    margin: 0 auto; /* Centrar el resumen */
+  }
+
+  /* Media Queries para Responsividad */
+  @media (max-width: 1024px) {
+    .article-header-container {
+      padding: 2rem 1.5rem; /* Aumentar el padding horizontal en tablets */
+    }
   }
 
   @media (max-width: 768px) {
+    .article-header-container {
+      padding: 1.5rem 1rem; /* Ajustar padding para móviles */
+      border-radius: 0; /* Quitar redondeo en móviles para un diseño de borde a borde */
+    }
+
     .article-title {
-      font-size: 2rem;
+      font-size: 2.2rem; /* Tamaño de título más apropiado para móviles */
+      line-height: 1.25;
+    }
+
+    .article-date {
+      font-size: 0.9rem;
     }
 
     .article-resume {
-      font-size: 1rem;
+      font-size: 1rem; /* Resumen más pequeño en móviles */
+      line-height: 1.5;
+      max-width: 100%; /* Permitir que ocupe todo el ancho disponible */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .article-title {
+      font-size: 1.8rem;
     }
   }
 </style>
