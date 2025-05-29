@@ -40,8 +40,8 @@
     }
   },
   "functionalities": {
-    "topinfo": "Impulsa tu restaurante con una solución integral y a la medida",
-    "topdescripcion": "Descubre cómo nuestro sistema transforma cada proceso en una oportunidad de crecimiento. Diseñado para ofrecer eficiencia y una experiencia de usuario superior, cada módulo está pensado para facilitar la operación diaria y potenciar tus resultados.",
+    "topinfo": "Optimiza tu bodega con una solución integral y adaptable",
+    "topdescripcion": "Con BodegueroDigital, cada proceso de tu negocio se digitaliza y automatiza para maximizar la eficiencia y el control. Nuestro sistema está diseñado para simplificar la gestión diaria y potenciar la rentabilidad, ofreciendo una experiencia intuitiva desde cualquier dispositivo.",
     "title": "Funcionalidades",
     "items": [
       {
@@ -53,44 +53,9 @@
             "imagen": "/images/functionality/pos.svg"
           },
           {
-            "funcion": "Pedidos Mesa",
-            "description": "Conecta en tiempo real con meseros y cajeros, permitiendo cobros parciales (división de cuentas), traspasos de pedidos entre mesas y opciones de pago flexibles, para un servicio impecable.",
-            "imagen": "/images/functionality/pedidosmesa.svg"
-          },
-          {
             "funcion": "Clientes",
             "description": "Administra y fideliza a tus clientes con un intuitivo sistema CRUD, facilitando el seguimiento y la personalización de la experiencia.",
             "imagen": "/images/functionality/clientes.svg"
-          }
-        ]
-      },
-      {
-        "name": "Platos y Productos",
-        "children": [
-          {
-            "funcion": "Gestión Integral",
-            "description": "Controla platos, productos y packs con herramientas fáciles de usar. Añade sabores a tus platos, gestiona el stock de productos y crea atractivos packs que se adaptan a cualquier ocasión.",
-            "imagen": "/images/functionality/platos.svg"
-          },
-          {
-            "funcion": "Insumos, Sabores e Ingredientes",
-            "description": "Organiza y actualiza de forma sencilla cada insumo, sabor e ingrediente, garantizando una oferta culinaria siempre fresca e innovadora.",
-            "imagen": "/images/functionality/insumos.svg"
-          },
-          {
-            "funcion": "Categorias",
-            "description": "Clasifica y optimiza tu menú para que tus clientes encuentren siempre lo que buscan.",
-            "imagen": "/images/functionality/categorias.svg"
-          }
-        ]
-      },
-      {
-        "name": "Recetas",
-        "children": [
-          {
-            "funcion": "Recetas",
-            "description": "Optimiza el control del stock de insumos en cada plato, asegurando precisión en las preparaciones y minimizando el desperdicio.",
-            "imagen": "/images/functionality/recetas.svg"
           }
         ]
       },
@@ -110,16 +75,41 @@
         ]
       },
       {
+        "name": "Pedidos",
+        "children": [
+          {
+            "funcion": "Registro de pedidos",
+            "description": "Registra y administra pedidos de manera rápida y sencilla, con seguimiento en tiempo real del estado de cada pedido para garantizar su correcta gestión y entrega.",
+            "imagen": "/images/functionality/reporte_ventas.svg"
+          },
+          {
+            "funcion": "Listas de Pedidos",
+            "description": "Consulta y filtra todos los pedidos realizados, visualizando su estado, detalles y fechas para un control eficiente y una mejor planificación logística.",
+            "imagen": "/images/functionality/reporte_compras.svg"
+          }
+        ]
+      },
+      {
         "name": "Reportes",
         "children": [
           {
             "funcion": "Reportes de Ventas",
-            "description": "Accede a informes detallados, con estado SUNAT, anulación de comprobantes y descargo en Excel, para un análisis financiero preciso.",
+            "description": "Obtén informes completos y detallados de todas tus ventas, con datos claros para analizar el desempeño comercial y tomar decisiones informadas.",
             "imagen": "/images/functionality/reporte_ventas.svg"
           },
           {
             "funcion": "Reportes de Compras",
-            "description": "Accede a informes detallados, anulación de comprobantes y descargo en Excel, para un análisis financiero preciso.",
+            "description": "Accede a reportes precisos de las compras realizadas, facilitando el control de inventarios y el seguimiento de proveedores.",
+            "imagen": "/images/functionality/reporte_compras.svg"
+          },
+          {
+            "funcion": "Contabilidad Estándar",
+            "description": "Lleva la contabilidad de tu bodega con reportes estandarizados que cumplen con normativas, simplificando el manejo financiero y tributario.",
+            "imagen": "/images/functionality/reporte_compras.svg"
+          },
+          {
+            "funcion": "Utilidades",
+            "description": "Visualiza el margen de ganancias y otros indicadores clave para evaluar la rentabilidad de tu negocio y optimizar la toma de decisiones.",
             "imagen": "/images/functionality/reporte_compras.svg"
           }
         ]
@@ -135,52 +125,62 @@
         ]
       },
       {
-        "name": "Chatbot",
+        "name": "Inventario",
         "children": [
           {
-            "funcion": "Chatbot WhatsApp",
-            "description": "Un chatbot inteligente en WhatsApp diseñado para proporcionar información detallada y actualizada sobre el sistema. Este módulo permite al usuario resolver dudas y acceder a datos técnicos y funcionales de forma interactiva, facilitando la toma de decisiones y la optimización de procesos.",
-            "imagen": "/images/functionality/chat_bot.svg"
-          }
-        ]
-      },
-      {
-        "name": "Carta Digital",
-        "children": [
-          {
-            "funcion": "Carta Digital",
-            "description": "Mantén tu menú siempre actualizado y cautiva a tus clientes con la flexibilidad de la carta digital de NubeRest. ¿Tienes un plato especial del día? ¿Necesitas ajustar precios o destacar promociones? Con nuestra carta digital, los cambios son instantáneos y sin complicaciones. Prueba ahora la carta digital.",
+            "funcion": "Movimientos de Productos",
+            "description": "Controla cada entrada y salida de productos en tiempo real. Visualiza el historial de movimientos para mantener un inventario preciso y evitar quiebres o excedentes.",
             "imagen": "/images/functionality/carta_digital.svg"
           }
         ]
       },
       {
-        "name": "Delivery",
+        "name": "Productos y Servicios",
         "children": [
           {
-            "funcion": "Delivery",
-            "description": "Cuando un cliente realiza un pedido de delivery, éste se integra automáticamente a tu sistema de gestión. Podrás visualizar todos los pedidos en tiempo real, gestionarlos de manera organizada, asignar repartidores y realizar un seguimiento eficiente de cada entrega. Además, NubeRest te permite definir zonas de reparto, calcular costos de envío automáticamente y comunicarte fácilmente con tus clientes sobre el estado de sus pedidos.",
-            "imagen": "/images/functionality/proximamente.svg"
+            "funcion": "Marcas",
+            "description": "Organiza tus productos por marcas para una mejor clasificación y análisis. Asocia cada artículo con su fabricante o proveedor fácilmente.",
+            "imagen": "/images/functionality/carta_digital.svg"
+          },
+          {
+            "funcion": "Categorías",
+            "description": "Clasifica tus productos en categorías personalizadas para una gestión más ordenada y una navegación rápida dentro del sistema.",
+            "imagen": "/images/functionality/carta_digital.svg"
+          },
+          {
+            "funcion": "Productos",
+            "description": "Registra y gestiona todos los productos o servicios de tu bodega, incluyendo precios, stock, unidades y descripciones, desde una sola interfaz.",
+            "imagen": "/images/functionality/carta_digital.svg"
           }
         ]
       },
       {
-        "name": "Asistencia",
-        "children": [
-          {
-            "funcion": "Asistencia",
-            "description": "En el futuro, NubeRest revolucionará la forma en que gestionas la atención al cliente en tu restaurante. Tus clientes podrán realizar solicitudes específicas desde la carta digital en sus dispositivos, como pedir la cuenta, solicitar más bebidas o llamar al camarero, todo con un simple toque. Esto agilizará la comunicación y reducirá los tiempos de espera..",
-            "imagen": "/images/functionality/proximamente.svg"
-          }
-        ]
-      },
-      {
-        "name": "Cobranza",
+        "name": "Cobros Pendientes",
         "children": [
           {
             "funcion": "Cobranza",
-            "description": "Próximamente, NubeRest transformará el proceso de cobro en tu restaurante. Tus clientes podrán elegir entre una amplia variedad de métodos de pago directamente desde la mesa (a través de sus dispositivos o dispositivos portátiles) o en el punto de venta. Esto incluirá tarjetas de crédito y débito, pagos móviles, billeteras virtuales y otras opciones populares.",
+            "description": "Lleva el control de los pagos pendientes de tus clientes de forma clara y organizada. Visualiza montos, fechas de vencimiento y estados para facilitar tus procesos de cobranza.",
             "imagen": "/images/functionality/proximamente.svg"
+          }
+        ]
+      },
+      {
+        "name": "Guías de Remisión",
+        "children": [
+          {
+            "funcion": "Transportistas",
+            "description": "Registra y gestiona las empresas o personas encargadas del traslado de tus productos. Asocia cada guía con su transportista para un mejor control logístico.",
+            "imagen": "/images/functionality/transportistas.svg"
+          },
+          {
+            "funcion": "Conductores",
+            "description": "Lleva un registro detallado de los conductores responsables de las entregas, incluyendo datos de contacto y licencia.",
+            "imagen": "/images/functionality/conductores.svg"
+          },
+          {
+            "funcion": "Vehículos",
+            "description": "Administra la flota utilizada para tus despachos, registrando placas, tipo de vehículo y asignaciones, asegurando trazabilidad en cada guía.",
+            "imagen": "/images/functionality/vehiculos.svg"
           }
         ]
       }
@@ -264,42 +264,42 @@
   },
   "faq": [
     {
-      "question": "¿NubeRest está aprobada por SUNAT?",
-      "answer": "Sí, NubeRest cumple con todos los requisitos de SUNAT para emitir comprobantes electrónicos. Utiliza certificados digitales emitidos por una autoridad certificadora acreditada por INDECOPI. Para ello, trabajamos con Girasol.pe en la emisión de certificados digitales."
+      "question": "¿BodegueroDigital está homologado por SUNAT?",
+      "answer": "Sí, BodegueroDigital cumple con los requisitos de SUNAT para la emisión de comprobantes electrónicos. Usamos certificados digitales válidos, emitidos por entidades autorizadas por INDECOPI como Girasol.pe, garantizando que tu facturación esté siempre al día y en regla."
     },
     {
-      "question": "¿Puedo emitir otros comprobantes?",
-      "answer": "Por supuesto. NubeRest incluye un sistema de facturación electrónica gratuito que permite emitir comprobantes de forma ilimitada. Además, si ya cuentas con tu propio sistema de facturación, puedes integrarlo fácilmente con nuestra plataforma."
+      "question": "¿Puedo emitir facturas, boletas y otros comprobantes?",
+      "answer": "Claro que sí. Con BodegueroDigital puedes emitir facturas, boletas, notas de crédito y débito sin límites. Y si ya tienes un sistema propio de facturación electrónica, también puedes integrarlo fácilmente con nuestra plataforma."
     },
     {
       "question": "¿Qué necesito para empezar a emitir facturación electrónica?",
-      "answer": "Para comenzar a emitir comprobantes con NubeRest, solo necesitas contratar un plan, contar con un certificado digital y tener usuarios autorizados por SUNAT. Puedes obtener tu certificado con nuestros aliados de confianza como Girasol.pe."
+      "answer": "Solo necesitas contratar un plan, tener un certificado digital y registrar tus usuarios ante SUNAT. Si aún no tienes tu certificado, puedes obtenerlo directamente con Girasol.pe, uno de nuestros aliados de confianza."
     },
     {
-      "question": "¿Puedo enviar mis comprobantes vía WhatsApp?",
-      "answer": "Sí, NubeRest permite el envío automático de comprobantes electrónicos a través de WhatsApp. Puedes usar el número del sistema sin costo adicional, o bien configurar tu propio número personalizado por un valor único de S/150.00/Anuales. En ambos casos, el comprobante se entrega directamente en el chat mediante nuestra inteligencia artificial, optimizando la atención al cliente."
+      "question": "¿Puedo emitir guías de remisión con transportistas y vehículos?",
+      "answer": "Sí. BodegueroDigital te permite emitir guías de remisión de forma rápida y sencilla, incluyendo datos de transportistas, conductores y vehículos. Además, puedes automatizar este proceso según tus necesidades."
     },
     {
-      "question": "¿Hay rapidez y automatización para la impresión?",
-      "answer": "Sí. NubeRest agiliza la gestión en sala permitiendo tomar pedidos desde celulares o tablets, generar comandas e imprimir automáticamente en cocina o barra. Todo se coordina al instante, incluyendo el control de caja y el envío de mensajes por WhatsApp mediante IA."
+      "question": "¿Qué beneficios obtengo al convertirme en partner?",
+      "answer": "Como partner de BodegueroDigital accederás a comisiones por cada cliente referido, soporte técnico exclusivo y certificados digitales incluidos. Para formalizar tu alianza de forma segura, firmamos el contrato a través de Firmeasy.legal, una plataforma 100% válida."
     },
     {
-      "question": "¿Puedo acceder a una prueba demo?",
-      "answer": "Sí, puedes explorar NubeRest con una demo gratuita que te permitirá conocer sus funciones principales en acción. Es una excelente forma de evaluar cómo se adapta a las necesidades de tu restaurante antes de contratar un plan."
+      "question": "¿BodegueroDigital es fácil de usar si no tengo experiencia en tecnología?",
+      "answer": "Sí. Nuestra plataforma ha sido creada para personas con poca o ninguna experiencia digital. Es intuitiva, clara y cuenta con soporte personalizado para ayudarte en cada paso."
     },
     {
-      "question": "¿Por qué ser partner?",
-      "answer": "Al convertirte en partner de NubeRest, obtendrás tarifas preferenciales, herramientas exclusivas y certificados digitales incluidos. Activa tu suscripción para comenzar. Para formalizar tu alianza, deberás presentarnos tu ficha RUC y firmar un contrato a través de Firmeasy.legal, garantizando así su validez y seguridad."
+      "question": "¿Puedo controlar mi inventario con este sistema?",
+      "answer": "Sí. BodegueroDigital incluye un módulo avanzado de inventario donde puedes gestionar productos, movimientos, categorías y marcas, además de recibir alertas automáticas cuando tu stock esté por agotarse."
     }
   ],
   "partner": {
-    "title": "Únete a Nuestro Programa de Desarrolladores de Negocio",
-    "description": "¿Eres emprendedor, desarrollador de negocios o una pequeña empresa en busca de una oportunidad rentable? Conviértete en parte de nuestro exclusivo programa de comercialización y lleva nuestra solución a más clientes mientras generas ingresos.",
-    "benefitstitle": "Beneficios Exclusivos",
+    "title": "Gana Dinero Distribuyendo BodegueroDigital",
+    "description": "¿Tienes contactos en el mundo comercial o eres alguien con visión para los negocios? Únete a nuestro Programa de Partners y empieza a generar ingresos comisionando por cada cliente que refieras. BodegueroDigital es una solución ideal para digitalizar la gestión de bodegas y pequeños comercios, y tú puedes ser parte de su expansión.",
+    "benefitstitle": "Beneficios para Partners",
     "benefits": [
       "Márgenes de ganancia atractivos",
-      "Soporte técnico especializado",
-      "Atención personalizada",
+      "Capacitación gratuita",
+      "Soporte directo del equipo de BodegueroDigital",
       "Acceso exclusivo al software"
     ]
   },
