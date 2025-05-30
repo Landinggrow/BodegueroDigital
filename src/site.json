@@ -28,7 +28,7 @@
     ],
     "button1": {
       "text": "Comenzar",
-      "link": "https://wa.me/51919452469?text=Hola,%20estoy%20interesado%20en%20el%20sistema%20de%20Gestión%20de%20Restaurantes%20NubeRest"
+      "link": "https://wa.me/51912065216?text=Hola,%20estoy%20interesado%20en%20el%20Sistema%20de%20Gestión%20de%20Bodegas%20--%20BodegueroDigital"
     },
     "button2": {
       "text": "Probar Demo",
@@ -36,7 +36,7 @@
     },
     "button3": {
       "text": "Comenzar",
-      "link": "https://wa.me/51919452469?text=Hola,%20estoy%20interesado%20en%20ser%20Partner%20de%20NubeRest"
+      "link": "https://wa.me/51919452469?text=Hola,%20estoy%20interesado%20en%20ser%20Partner%20de%20BodegueroDigital"
     }
   },
   "functionalities": {
@@ -189,7 +189,7 @@
   "footer": {
     "content": {
       "description": "BodegueroDigital es un software en la nube diseñado para transformar la manera en que administras tu negocio.",
-      "email": "soporte@nuberest.org.pe",
+      "email": "contacto@andape.pe",
       "phone": "(+51) 912 065 216"
     }
   },

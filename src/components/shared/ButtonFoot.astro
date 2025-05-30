@@ -5,6 +5,18 @@ const { class: customClass = "" } = Astro.props;
 ---
 
 <a href={siteData.nav.button2.link} target="_blank" rel="noopener noreferrer" 
-                   class={`text-white bg-[#0078D4] hover:bg-[#005597] font-medium rounded-full sm:text-[20px] px-8 py-2 sm:px-16 text-center transition-all ${customClass}`}>
-                    {siteData.nav.button2.text}
+   class={`text-white bg-[#0078D4] hover:bg-[#005597] font-medium rounded-full sm:text-[20px] px-8 py-2 sm:px-16 text-center transition-all ${customClass}`}>
+    <span class="hidden min-[321px]:inline">{siteData.nav.button2.text}</span>
+    <span class="inline min-[321px]:hidden">Demo</span>
 </a>
+
+<style>
+  @media (min-width: 321px) {
+    .min-\[321px\]\:inline { display: inline !important; }
+    .min-\[321px\]\:hidden { display: none !important; }
+  }
+  @media (max-width: 320px) {
+    .min-\[321px\]\:inline { display: none !important; }
+    .min-\[321px\]\:hidden { display: inline !important; }
+  }
+</style>

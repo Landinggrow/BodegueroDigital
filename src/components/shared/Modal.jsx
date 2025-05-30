@@ -1,11 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Modal = ({ isOpen, onClose }) => {
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    businessName: "",
+    businessType: "",
+  });
+
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const toggleDropdown = (dropdown) => {
     setActiveDropdown((prev) => (prev === dropdown ? null : dropdown));
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleRadioChange = (e) => {
+    setFormData({
+      ...formData,
+      businessType: e.target.value,
+    });
+    setActiveDropdown(null);
   };
 
   const handleOptionChange = (event) => {
@@ -17,252 +42,262 @@ const Modal = ({ isOpen, onClose }) => {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    setError("");
+
+    try {
+      const response = await fetch("/contact.json", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          automation: selectedOptions,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Error al enviar el formulario");
+
+      setSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        businessName: "",
+        businessType: "",
+      });
+      setSelectedOptions([]);
+    } catch (err) {
+      setError(err.message || "Ocurrió un error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleClose = () => {
+    setFormData({
+      name: "",
+      email: "",
+      businessName: "",
+      businessType: "",
+    });
     setSelectedOptions([]);
     setActiveDropdown(null);
+    setSuccess(false);
+    setError("");
     onClose();
   };
+
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => {
+        window.location.href = "https://comercios.andape.pe/systems";
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [success]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/55">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <div className="flex justify-between gap-2 items-center">
-          <h2 className="text-2xl text-left font-bold mb-4">
-            Inscríbete para una Demostración online
-          </h2>
-          <button
-            type="button"
-            className="bg-gray-200 hover:bg-gray-300 px-2 py-2 mb-2 rounded-md"
-            onClick={handleClose}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-2 sm:px-4">
+      <div className="relative bg-white p-4 sm:p-6 rounded-2xl shadow-2xl w-full max-w-lg sm:max-w-md max-h-[95vh] overflow-y-auto transition-all duration-300">
+        {/* Botón cerrar */}
+        <button
+          type="button"
+          aria-label="Cerrar modal"
+          className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#7A9EC6] transition"
+          onClick={handleClose}
+        >
+          <svg
+            className="w-5 h-5 text-gray-700"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <svg
-              class="w-6 h-6 text-gray-800 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18 17.94 6M18 18 6.06 6"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
 
-        <form>
-          {/* Campo: Nombre completo */}
-          <label className="block text-[15px] text-left font-medium text-gray-700 mb-2">
+        <h2 className="text-xl sm:text-2xl font-bold mb-4 text-[#092858] text-left">
+          Solicita una demostración gratuita
+        </h2>
+
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          {/* Nombre completo */}
+          <label className="block text-[15px] font-medium text-gray-700">
             Nombre completo:
             <input
               type="text"
               name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Ingresa tu nombre"
-              className="w-full bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md text-left"
+              className="mt-1 w-full bg-gray-100 focus:bg-white px-4 py-2 rounded-md border border-gray-200 focus:border-[#7A9EC6] outline-none transition"
               required
             />
           </label>
 
-          {/* Campo: Correo electrónico */}
-          <label className="block text-[15px] text-left font-medium text-gray-700 mb-2">
+          {/* Correo electrónico */}
+          <label className="block text-[15px] font-medium text-gray-700">
             Correo electrónico:
             <input
               type="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="ejemplo@gmail.com"
-              className="w-full bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md text-left"
+              className="mt-1 w-full bg-gray-100 focus:bg-white px-4 py-2 rounded-md border border-gray-200 focus:border-[#7A9EC6] outline-none transition"
               required
             />
           </label>
 
-          {/* Campo: Nombre de tu restaurante o negocio */}
+          {/* Nombre del comercio */}
           <div>
-            <label className="text-[15px] font-medium text-gray-700 mb-2 flex justify-between text-left">
-              <span>Nombre de tu restaurante o negocio:</span>
-              <span className="text-[#E49542] text-sm">(Opcional)</span>
+            <label className="text-[15px] font-medium text-gray-700 flex justify-between">
+              <span>Nombre de tu bodega o comercio:</span>
+              <span className="text-[#4673A6] text-xs">(Opcional)</span>
             </label>
             <input
               type="text"
               name="businessName"
-              placeholder='"Paladar Selecto"'
-              className="w-full bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md"
-              required
+              value={formData.businessName}
+              onChange={handleChange}
+              placeholder='"Bodega Central", "Comercial Díaz"'
+              className="mt-1 w-full bg-gray-100 focus:bg-white px-4 py-2 rounded-md border border-gray-200 focus:border-[#7A9EC6] outline-none transition"
             />
           </div>
 
-          {/* Dropdown dinámico: ¿Qué tipo de negocio tienes? */}
-          <label className="text-[16px] text-left font-medium text-gray-700 mb-2 flex justify-between">
-            ¿Qué tipo de negocio tienes?
-            <span className="text-[#E49542] text-sm">(Opcional)</span>
-          </label>
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => toggleDropdown("businessType")}
-              className="w-full bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md text-left mb-2"
-            >
-              {activeDropdown === "businessType"
-                ? "Cerrar opciones"
-                : "Seleccionar tipo de negocio"}
-            </button>
-
-            <div
-              className={`absolute mt-2 w-full bg-white border rounded-md shadow-lg p-4 space-y-2 transition-all duration-300 ease-in-out ${
-                activeDropdown === "businessType"
-                  ? "opacity-100 max-h-[300px] z-50"
-                  : "opacity-0 max-h-0 overflow-hidden z-50"
-              }`}
-            >
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="businessType"
-                  value="Restaurante"
-                  className="mr-2"
-                />
-                Restaurante
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="businessType"
-                  value="Cafetería"
-                  className="mr-2"
-                />
-                Cafetería
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="businessType"
-                  value="Food truck"
-                  className="mr-2"
-                />
-                Food truck
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="businessType"
-                  value="Bodega"
-                  className="mr-2"
-                />
-                Bodega
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="businessType"
-                  value="Otro"
-                  className="mr-2"
-                />
-                Otro
-              </label>
+          {/* Tipo de negocio */}
+          <div>
+            <label className="text-[15px] font-medium text-gray-700 flex justify-between">
+              ¿Qué tipo de negocio tienes?
+              <span className="text-[#4673A6] text-xs">(Opcional)</span>
+            </label>
+            <div className="relative mt-1">
+              <button
+                type="button"
+                onClick={() => toggleDropdown("businessType")}
+                className="w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md text-left border border-gray-200 focus:border-[#7A9EC6] outline-none transition"
+              >
+                {formData.businessType
+                  ? formData.businessType
+                  : "Seleccionar tipo de negocio"}
+              </button>
+              <div
+                className={`absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg p-3 space-y-2 z-50 transition-all duration-300 ${
+                  activeDropdown === "businessType"
+                    ? "opacity-100 max-h-60"
+                    : "opacity-0 max-h-0 overflow-hidden pointer-events-none"
+                }`}
+              >
+                {[
+                  "Bodega",
+                  "Tienda de abarrotes",
+                  "Minimarket",
+                  "Distribuidora",
+                  "Otro",
+                ].map((option) => (
+                  <label
+                    key={option}
+                    className="flex items-center cursor-pointer text-gray-700"
+                  >
+                    <input
+                      type="radio"
+                      name="businessType"
+                      value={option}
+                      checked={formData.businessType === option}
+                      onChange={handleRadioChange}
+                      className="mr-2 accent-[#092858]"
+                    />
+                    {option}
+                  </label>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Dropdown dinámico: ¿Qué te interesa automatizar? */}
-          <label className="flex justify-between text-[15px] text-left font-medium text-gray-700 ">
-            ¿Qué te interesa automatizar?
-            <span className="text-[#E49542] text-sm">(Opcional)</span>
-          </label>
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => toggleDropdown("automation")}
-              className="w-full bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md text-left"
-            >
-              {activeDropdown === "automation"
-                ? "Cerrar opciones"
-                : "Seleccionar opciones"}
-            </button>
-
-            <div
-              className={`absolute mt-2 w-full bg-white border rounded-md shadow-lg p-4 space-y-2 transition-all duration-300 ease-in-out ${
-                activeDropdown === "automation"
-                  ? "opacity-100 max-h-[300px] z-50"
-                  : "opacity-0 max-h-0 overflow-hidden z-50"
-              }`}
-            >
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  value="Toma de pedidos"
-                  checked={selectedOptions.includes("Toma de pedidos")}
-                  onChange={handleOptionChange}
-                  className="mr-2"
-                />
-                Toma de pedidos
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  value="Facturación electrónica"
-                  checked={selectedOptions.includes("Facturación electrónica")}
-                  onChange={handleOptionChange}
-                  className="mr-2"
-                />
-                Facturación electrónica
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  value="Gestión de caja"
-                  checked={selectedOptions.includes("Gestión de caja")}
-                  onChange={handleOptionChange}
-                  className="mr-2"
-                />
-                Gestión de caja
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  value="Delivery"
-                  checked={selectedOptions.includes("Delivery")}
-                  onChange={handleOptionChange}
-                  className="mr-2"
-                />
-                Delivery
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  value="Reportes y control"
-                  checked={selectedOptions.includes("Reportes y control")}
-                  onChange={handleOptionChange}
-                  className="mr-2"
-                />
-                Reportes y control
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  value="Otro"
-                  checked={selectedOptions.includes("Otro")}
-                  onChange={handleOptionChange}
-                  className="mr-2"
-                />
-                Otro
-              </label>
+          {/* Qué desea automatizar */}
+          <div>
+            <label className="flex justify-between text-[15px] font-medium text-gray-700">
+              ¿Qué deseas automatizar?
+              <span className="text-[#4673A6] text-xs">(Opcional)</span>
+            </label>
+            <div className="relative mt-1">
+              <button
+                type="button"
+                onClick={() => toggleDropdown("automation")}
+                className="w-full bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md text-left border border-gray-200 focus:border-[#7A9EC6] outline-none transition"
+              >
+                {selectedOptions.length > 0
+                  ? selectedOptions.join(", ")
+                  : "Seleccionar opciones"}
+              </button>
+              <div
+                className={`absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg p-3 space-y-2 z-50 transition-all duration-300 ${
+                  activeDropdown === "automation"
+                    ? "opacity-100 max-h-60"
+                    : "opacity-0 max-h-0 overflow-hidden pointer-events-none"
+                }`}
+              >
+                {[
+                  "Ventas y POS",
+                  "Inventario de productos",
+                  "Pedidos a proveedores",
+                  "Caja diaria",
+                  "Cuentas por cobrar",
+                  "Guías de remisión",
+                  "Otro",
+                ].map((option) => (
+                  <label
+                    key={option}
+                    className="flex items-center cursor-pointer text-gray-700"
+                  >
+                    <input
+                      type="checkbox"
+                      value={option}
+                      checked={selectedOptions.includes(option)}
+                      onChange={handleOptionChange}
+                      className="mr-2 accent-[#092858]"
+                    />
+                    {option}
+                  </label>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Botones para enviar o cerrar */}
-          <div className="mt-4 flex justify-end gap-2">
+          {/* Botones */}
+          <div className="pt-2 flex justify-end">
             <button
               type="submit"
-              className="bg-[#E49542] hover:bg-[#854937] text-white px-4 py-2 rounded-md"
+              className="bg-[#E49542] hover:bg-[#854937] text-white px-6 py-2 rounded-md font-semibold shadow transition"
+              disabled={loading}
             >
-              Enviar
+              {loading ? "Enviando..." : "Enviar"}
             </button>
           </div>
+
+          {/* Mensaje de éxito o error */}
+          {success && (
+            <p className="mt-4 text-green-600 font-semibold text-center">
+              ¡Formulario enviado correctamente! Redirigiendo...
+            </p>
+          )}
+          {error && (
+            <p className="mt-4 text-red-600 font-semibold text-center">
+              {error}
+            </p>
+          )}
         </form>
       </div>
     </div>

@@ -5,33 +5,50 @@ import ButtonPrice from './ButtonPrice.astro';
 
 const collaborators = siteData.collaborators;
 ---
-<section id="colaboradores" class="scroll-mt-32">
-  <Container class="md:my-24 mb-10">
+<section id="colaboradores" class="scroll-mt-32 ">
+  <Container class="md:my-20 mb-10">
     <div class="flex justify-center">
-      <h2 class="text-4xl pb-6 text-center text-[#FFFFFF] font-bold">{collaborators.title}</h2>
+      <h2 class="text-3xl md:text-4xl pb-6 text-center text-white font-bold">{collaborators.title}</h2>
     </div>
-    <p class="text-center text-[#B7DBF6] text-lg mb-10">{collaborators.description}</p>
-    <div class="container mx-auto md:mt-10 px-4 md:px-8">
-      <div class={`grid ${collaborators.items.length === 1 ? 'grid-cols-1 justify-center' : 'grid-cols-1 sm:grid-cols-2'} gap-8`}>
+    <p class="text-center text-[#B7DBF6] text-lg mb-10 max-w-2xl mx-auto">{collaborators.description}</p>
+    <div class="mx-auto md:mt-10 px-2 md:px-8 max-w-6xl">
+      <div class={`grid gap-8 ${collaborators.items.length === 1 ? 'grid-cols-1 justify-center' : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'}`}>
         {collaborators.items.map((collaborator) => (
-          <div class="xl:p-12 p-6 rounded-[40px] shadow-xl bg-[#F9FBFC] text-center">
-            <div class="flex justify-center">
-              <img
-                src={collaborator.logo}
-                alt={`Logo de ${collaborator.name}`}
-                class="h-18 w-auto mb-6"
-              />
+          <div class="relative group xl:p-10 p-6 rounded-[32px] shadow-xl bg-white/90 text-center border border-[#e5e7eb] hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-full">
+            <div>
+              <div class="flex justify-center mb-6">
+                <img
+                  src={collaborator.logo}
+                  alt={`Logo de ${collaborator.name}`}
+                  class="h-16 w-auto max-w-[120px] object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-[#545454] text-[17px] md:text-[18px] mb-8 text-justify">{collaborator.description}</p>
             </div>
-            <p class="text-[#545454] text-[18px] mb-15 text-justify">{collaborator.description}</p>
-            <ButtonPrice
-              href={collaborator.link}
-              class="md:py-6 py-3 xl:px-30 px-5 text-[#FFFCFC] font-bold xl:text-xl text-[19px]"
-            >
-              Visitar sitio web
-            </ButtonPrice>
+            <div class="flex justify-center">
+              <ButtonPrice
+                href={collaborator.link}
+                class="md:py-4 py-2 xl:px-12 px-6 text-white font-bold xl:text-lg text-base shadow-lg hover:scale-105 transition"
+              >
+                Visitar sitio web
+              </ButtonPrice>
+            </div>
+            <div class="absolute inset-0 rounded-[32px] border-2 border-[#267ad2] opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300"></div>
           </div>
         ))}
       </div>
     </div>
   </Container>
 </section>
+
+<style>
+  @media (max-width: 640px) {
+    h2 { font-size: 1.6rem !important; }
+    .rounded-\[32px\] { border-radius: 1.2rem !important; }
+    .xl\:p-10 { padding: 1.5rem !important; }
+    .md\:text-\[32px\] { font-size: 1.4rem !important; }
+    .text-\[26px\] { font-size: 1.1rem !important; }
+    .xl\:px-12 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  }
+</style>

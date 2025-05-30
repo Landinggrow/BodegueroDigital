@@ -1,54 +1,131 @@
 ---
 import siteData from '../../site.json';
 import Container from './Container.astro';
+const menuItems = siteData.nav.menu.map(item => ({
+  name: item.name,
+  link: item.link.startsWith('#') ? `/${item.link}` : item.link
+}));
+const buttonText = siteData.nav.button1.text;
+const buttonLink = siteData.nav.button1.link;
 ---
 
-<nav class="bg-[#FFFFFF] fixed w-full z-20 top-0 start-0 border-b border-[#FDFCF7] ">
-   <Container class="flex flex-wrap items-center justify-between my-4"> 
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="/images/LogoBodegueroDigital.png" class="md:h-6 h-5" alt="Logo de NubeRest">
+<nav class="bg-[#FFFFFF] fixed w-full z-50 top-0 start-0 border-b border-[#FDFCF7] shadow-md">
+  <Container class="flex flex-wrap items-center justify-between my-4">
+    <div class="flex justify-center items-center">
+      <a href="/" class="flex items-center text-2xl font-bold font-poppins">
+      <span class="text-[#2c2c2c] text-2xl">Bodeguero</span>
+      <span class="text-[#0078d4] text-2xl">Digital</span>
     </a>
-    <div class="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
-      <a  href={ siteData.nav.button1.link}  target="_blank" rel="noopener noreferrer" class="text-white bg-[#4673A6] hover:bg-[#7A9EC6] font-medium rounded-full md:text-[20px] text-[18px] px-5 py-2 text-center ">{siteData.nav.button1.text}</a>
-      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center  p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-sticky" aria-expanded="false">
-        <span class="sr-only">Abrir el menu</span>
+    </div>
+    <div class="flex lg:order-2 rtl:space-x-reverse">
+      <!-- Desktop button -->
+      <a
+        href={buttonLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-[#4673A6] rounded-full hover:bg-[#7A9EC6] text-white font-medium md:text-[20px] text-[15px] px-4 py-2 text-center transition-all duration-300 shadow-md hover:shadow-lg hidden xs:inline md:inline sm:inline min-[365px]:inline max-[364px]:hidden demo-btn"
+      >
+        <span class="hidden md:inline">{buttonText}</span>
+        <span class="inline md:hidden">{buttonText}</span>
+      </a>
+      <!-- Hamburger -->
+      <button
+        data-collapse-toggle="navbar-sticky"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="navbar-sticky"
+        aria-expanded="false"
+        id="open-menu-button"
+      >
+        <span class="sr-only">Abrir el menú</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
       </button>
     </div>
-    <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
-      <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium  border border-gray-100 rounded-lg bg-[#FDFCF7] lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-[#FFFFFF]">
-        {siteData.nav.menu.map((item) => {
-          const computedLink = item.link.startsWith('#') ? `/${item.link}` : item.link;
-          return (
+    <div
+      class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+      id="navbar-sticky"
+    >
+      <ul class="flex navbar-items md:gap-5 p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-[#FDFCF7] lg:mt-0 lg:border-0 lg:bg-transparent">
+        {
+          menuItems.map((item) => (
             <li>
-              <a href={computedLink} class="block py-2 px-2 text-[#2B2B2B] xl:text-[17px] text-[15px]  font-medium rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-[#4673A6] lg:p-0">
+              <a
+                href={item.link}
+                class="relative block py-2 px-2 text-[#2B2B2B] xl:text-[17px] text-[15px] font-medium rounded-sm transition-colors
+                       after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#4673A6] after:transition-all after:duration-300
+                       hover:text-[#4673A6] hover:after:w-full
+                       lg:hover:bg-transparent lg:p-0"
+              >
                 {item.name}
               </a>
             </li>
-          );
-        })}
+          ))
+        }
+        {/* Botón solo visible en menú hamburguesa para <=364px */}
+        <li class="block lg:hidden w-full mt-2 max-[364px]:block min-[365px]:hidden">
+          <a
+            href={buttonLink}
+            class="w-full bg-[#4673A6] rounded-full hover:bg-[#7A9EC6] text-white font-medium text-lg px-6 py-3 h-auto transition-all duration-300 shadow-lg hover:shadow-xl text-center block demo-btn-mobile"
+          >
+            {buttonText}
+          </a>
+        </li>
       </ul>
     </div>
   </Container>
 </nav>
-<script>
-  const toggleButton = document.querySelector("[data-collapse-toggle='navbar-sticky']");
-  const menu = document.getElementById("navbar-sticky");
 
+<style>
+  @media (min-width: 1024px) {
+    .navbar-items { flex-direction: row !important; }
+  }
+  @media (max-width: 1023px) {
+    .navbar-items { flex-direction: column; }
+  }
+  @media (max-width: 364px) {
+    .max-\[364px\]\:hidden { display: none !important; }
+    .max-\[364px\]\:block { display: block !important; }
+  }
+  @media (min-width: 365px) {
+    .min-\[365px\]\:inline { display: inline !important; }
+    .min-\[365px\]\:hidden { display: none !important; }
+  }
+</style>
+
+<script>
   document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector("[data-collapse-toggle='navbar-sticky']");
+    const menu = document.getElementById("navbar-sticky");
+    const menuLinks = menu ? menu.querySelectorAll("a") : [];
+
     // Evento para abrir/cerrar el menú
     if (toggleButton && menu) {
       toggleButton.addEventListener("click", () => {
         menu.classList.toggle("hidden");
       });
     }
-  });
 
-  document.addEventListener("click", (event) => {
-    if (menu && toggleButton && !menu.contains(event.target as Node) && !toggleButton.contains(event.target as Node)) {
-      menu.classList.add("hidden");
-    }
+    // Cierra el menú al hacer click fuera o en un enlace
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (
+        menu &&
+        toggleButton &&
+        !menu.contains(target as Node) &&
+        !toggleButton.contains(target as Node)
+      ) {
+        menu.classList.add("hidden");
+      }
+    });
+
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 1024 && menu) {
+          menu.classList.add("hidden");
+        }
+      });
+    });
   });
 </script>
