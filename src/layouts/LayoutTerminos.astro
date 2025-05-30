@@ -1,0 +1,70 @@
+---
+import Nav from "../components/shared/Nav.astro";
+import Footer from "../components/shared/Footer.astro"
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- SEO Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- SEO Metadata -->
+    <title>BodegueroDigital | Términos y Condiciones</title>
+    <meta name="description" content="Lee los Términos y Condiciones de Uso de BodegueroDigital.  Información importante sobre el acceso, uso, propiedad intelectual, y responsabilidades de nuestra plataforma de gestión de restaurantes." />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="BodegueroDigital - Términos y Condiciones" />
+    <meta property="og:description" content="Lee los Términos y Condiciones de Uso de BodegueroDigital.  Información importante sobre el acceso, uso, propiedad intelectual, y responsabilidades de nuestra plataforma de gestión de restaurantes." />
+    <meta property="og:image" content="/images/LogoBodegueroDigital.png" />
+    <meta property="og:url" content="https://BodegueroDigital.com/terminos-y-condiciones" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BodegueroDigital - Términos y Condiciones de Uso" />
+    <meta name="twitter:description" content="Lee los Términos y Condiciones de Uso de BodegueroDigital.  Información importante sobre el acceso, uso, propiedad intelectual, y responsabilidades de nuestra plataforma de gestión de restaurantes." />
+    <meta name="twitter:image" content="/images/LogoBodegueroDigital.png" />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://BodegueroDigital.com/terminos-y-condiciones" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Términos y Condiciones de Uso - BodegueroDigital",
+      "url": "https://BodegueroDigital.com/terminos-y-condiciones",
+      "potentialAction": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "h3", "p", "li"]
+      }
+    }
+    </script>
+    
+    <!-- Favicon para modo claro -->
+        <link rel="icon" media="(prefers-color-scheme: light)" type="image/svg+xml" href="/favicon1.svg" />
+        <!-- Favicon para modo oscuro -->
+        <link rel="icon" media="(prefers-color-scheme: dark)" type="image/svg+xml" href="/favicon2.svg" />
+        <meta name="generator" content={Astro.generator} />
+    </head>
+    <body class="bg-[#04142D]">
+        <Nav />
+        <slot />
+        <Footer />
+    </body>
+</html>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    body {
+    font-family: 'Lexend Variable', sans-serif;
+    }
+</style>

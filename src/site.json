@@ -11,7 +11,7 @@
       },
       {
         "name": "Precio",
-        "link": "#precio"
+        "link": "/#precio"
       },
       {
         "name": "Blog",
@@ -19,7 +19,7 @@
       },
       {
         "name": "Preguntas Frecuentes",
-        "link": "#FaQ"
+        "link": "/#FaQ"
       },
       {
         "name": "Ser Partner",
@@ -188,9 +188,9 @@
   },
   "footer": {
     "content": {
-      "description": "Somos NubeRest, una solución integral para restaurantes y negocios gastronómicos. Ofrecemos diversas herramientas para optimizar la operación de tu negocio.",
+      "description": "BodegueroDigital es un software en la nube diseñado para transformar la manera en que administras tu negocio.",
       "email": "soporte@nuberest.org.pe",
-      "phone": "(+51) 919 452 469"
+      "phone": "(+51) 912 065 216"
     }
   },
   "support": {
