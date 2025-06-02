@@ -98,11 +98,6 @@
             "imagen": "/images/functionality/reporte_ventas.svg"
           },
           {
-            "funcion": "Reportes de Compras",
-            "description": "Accede a reportes precisos de las compras realizadas, facilitando el control de inventarios y el seguimiento de proveedores.",
-            "imagen": "/images/functionality/reporte_compras.svg"
-          },
-          {
             "funcion": "Contabilidad Estándar",
             "description": "Lleva la contabilidad de tu bodega con reportes estandarizados que cumplen con normativas, simplificando el manejo financiero y tributario.",
             "imagen": "/images/functionality/reporte_compras.svg"
