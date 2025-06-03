@@ -50,12 +50,12 @@
           {
             "funcion": "POS",
             "description": "Realiza ventas de forma ágil y sin complicaciones, con impresión automática de comandas que acelera el servicio.",
-            "imagen": "/images/functionality/pos.svg"
+            "imagen": "/images/functionality/POS_Ventas.svg"
           },
           {
             "funcion": "Clientes",
             "description": "Administra y fideliza a tus clientes con un intuitivo sistema CRUD, facilitando el seguimiento y la personalización de la experiencia.",
-            "imagen": "/images/functionality/clientes.svg"
+            "imagen": "/images/functionality/Cliente_Ventas.svg"
           }
         ]
       },
@@ -65,12 +65,12 @@
           {
             "funcion": "Registro de Compras",
             "description": "Lleva un control detallado de cada adquisición, facilitando la gestión y la toma de decisiones.",
-            "imagen": "/images/functionality/compras.svg"
+            "imagen": "/images/functionality/Registro_Compras.svg"
           },
           {
             "funcion": "Proveedores",
             "description": "Administra tus relaciones con proveedores a través de un sistema CRUD que mantiene toda la información al día y accesible.",
-            "imagen": "/images/functionality/proveedores.svg"
+            "imagen": "/images/functionality/Proveedores_Compra.svg"
           }
         ]
       },
@@ -80,12 +80,12 @@
           {
             "funcion": "Registro de pedidos",
             "description": "Registra y administra pedidos de manera rápida y sencilla, con seguimiento en tiempo real del estado de cada pedido para garantizar su correcta gestión y entrega.",
-            "imagen": "/images/functionality/reporte_ventas.svg"
+            "imagen": "/images/functionality/RegPedidos_Pedidos.svg"
           },
           {
             "funcion": "Listas de Pedidos",
             "description": "Consulta y filtra todos los pedidos realizados, visualizando su estado, detalles y fechas para un control eficiente y una mejor planificación logística.",
-            "imagen": "/images/functionality/reporte_compras.svg"
+            "imagen": "/images/functionality/ListPedidos_Pedidos.svg"
           }
         ]
       },
@@ -95,17 +95,17 @@
           {
             "funcion": "Reportes de Ventas",
             "description": "Obtén informes completos y detallados de todas tus ventas, con datos claros para analizar el desempeño comercial y tomar decisiones informadas.",
-            "imagen": "/images/functionality/reporte_ventas.svg"
+            "imagen": "/images/functionality/ReportedeVentas_Reportes.svg"
           },
           {
             "funcion": "Contabilidad Estándar",
             "description": "Lleva la contabilidad de tu bodega con reportes estandarizados que cumplen con normativas, simplificando el manejo financiero y tributario.",
-            "imagen": "/images/functionality/reporte_compras.svg"
+            "imagen": "/images/functionality/ReporteContabilidad_Reportes.svg"
           },
           {
             "funcion": "Utilidades",
             "description": "Visualiza el margen de ganancias y otros indicadores clave para evaluar la rentabilidad de tu negocio y optimizar la toma de decisiones.",
-            "imagen": "/images/functionality/reporte_compras.svg"
+            "imagen": "/images/functionality/ReportUtilidades_Reportes.svg"
           }
         ]
       },
@@ -115,7 +115,7 @@
           {
             "funcion": "Caja",
             "description": "Gestiona ingresos y egresos con reportes detallados de cada cierre, además de resúmenes de productos vendidos y ventas totales, asegurando una administración transparente y eficiente.",
-            "imagen": "/images/functionality/caja.svg"
+            "imagen": "/images/functionality/Caja_Caja.svg"
           }
         ]
       },
@@ -125,7 +125,7 @@
           {
             "funcion": "Movimientos de Productos",
             "description": "Controla cada entrada y salida de productos en tiempo real. Visualiza el historial de movimientos para mantener un inventario preciso y evitar quiebres o excedentes.",
-            "imagen": "/images/functionality/carta_digital.svg"
+            "imagen": "/images/functionality/Inventario_Inventario.svg"
           }
         ]
       },
@@ -135,17 +135,17 @@
           {
             "funcion": "Marcas",
             "description": "Organiza tus productos por marcas para una mejor clasificación y análisis. Asocia cada artículo con su fabricante o proveedor fácilmente.",
-            "imagen": "/images/functionality/carta_digital.svg"
+            "imagen": "/images/functionality/Marcas_ProdyServ.svg"
           },
           {
             "funcion": "Categorías",
             "description": "Clasifica tus productos en categorías personalizadas para una gestión más ordenada y una navegación rápida dentro del sistema.",
-            "imagen": "/images/functionality/carta_digital.svg"
+            "imagen": "/images/functionality/Categorias_ProdyServ.svg"
           },
           {
             "funcion": "Productos",
             "description": "Registra y gestiona todos los productos o servicios de tu bodega, incluyendo precios, stock, unidades y descripciones, desde una sola interfaz.",
-            "imagen": "/images/functionality/carta_digital.svg"
+            "imagen": "/images/functionality/Productos_ProdyServ.svg"
           }
         ]
       },
@@ -155,7 +155,7 @@
           {
             "funcion": "Cobranza",
             "description": "Lleva el control de los pagos pendientes de tus clientes de forma clara y organizada. Visualiza montos, fechas de vencimiento y estados para facilitar tus procesos de cobranza.",
-            "imagen": "/images/functionality/proximamente.svg"
+            "imagen": "/images/functionality/Cobranza_Cobranza.svg"
           }
         ]
       },
@@ -165,17 +165,17 @@
           {
             "funcion": "Transportistas",
             "description": "Registra y gestiona las empresas o personas encargadas del traslado de tus productos. Asocia cada guía con su transportista para un mejor control logístico.",
-            "imagen": "/images/functionality/transportistas.svg"
+            "imagen": "/images/functionality/Transportista_Guiaremi.svg"
           },
           {
             "funcion": "Conductores",
             "description": "Lleva un registro detallado de los conductores responsables de las entregas, incluyendo datos de contacto y licencia.",
-            "imagen": "/images/functionality/conductores.svg"
+            "imagen": "/images/functionality/Conductores_Guiaremi.svg"
           },
           {
             "funcion": "Vehículos",
             "description": "Administra la flota utilizada para tus despachos, registrando placas, tipo de vehículo y asignaciones, asegurando trazabilidad en cada guía.",
-            "imagen": "/images/functionality/vehiculos.svg"
+            "imagen": "/images/functionality/Cehiculos_Guiaremi.svg"
           }
         ]
       }
