@@ -1,0 +1,14 @@
+# Dependencias
+dist
+node_modules
+
+# Archivos de log
+npm-debug.log*
+pnpm-debug.log*
+
+# Archivos del IDE
+.vscode
+.idea
+
+# Archivos del sistema
+.DS_Store

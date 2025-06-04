@@ -4,12 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.3",
+    "@astrojs/node": "^9.2.2",
     "@astrojs/react": "^4.2.2",
     "@fontsource-variable/lexend": "^5.2.6",
     "@tailwindcss/vite": "^4.0.17",
