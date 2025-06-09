@@ -192,16 +192,8 @@
     "title": "Ellos ya confían en nosotros",
     "images": [
       {
-        "src": "/images/andape.png",
-        "alt": "Andape"
-      },
-      {
         "src": "/images/factmype.jpeg",
         "alt": "Factmype"
-      },
-      {
-        "src": "/images/girasol.jpeg",
-        "alt": "Girasol"
       },
       {
         "src": "/images/GrennCyle.jpeg",

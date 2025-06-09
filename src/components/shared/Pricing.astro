@@ -41,7 +41,11 @@ const categories = Object.keys(plans);
                 </div>
                 <p class="text-[#545454] text-[16px] md:text-[18px] my-2 mb-6">{plan.description}</p>
                 <div class="flex justify-center">
-                  <ButtonPrice href={siteData.pricing.button.link} class="md:py-4 py-2 xl:px-16 px-6 text-white font-bold xl:text-lg text-base shadow-lg hover:scale-105 transition">{siteData.pricing.button.text}</ButtonPrice>
+                  <ButtonPrice href={`https://wa.me/51912065216?text=${encodeURIComponent(
+                          `Hola quiero contratar el plan de DodegueroDigital de ${plan.price.amount}`
+                        )}`}
+                        class="md:py-4 py-2 xl:px-16 px-6 text-white font-bold  xl:text-lg text-base shadow-lg hover:scale-105 transition"
+                      >{siteData.pricing.button.text}</ButtonPrice>
                 </div>
                 {/* Destacado visual en hover */}
                 <div class="absolute inset-0 rounded-[32px] border-2 border-[#267ad2] opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300"></div>
